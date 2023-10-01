@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class CRUD {
@@ -29,9 +31,6 @@ public class CRUD {
             file = new RandomAccessFile(path, "rw"); //Abrindo-Criando arquivo database para escrita
             file.setLength(0); //Zerando o marcador
 
-            SimpleDateFormat formatarData = new SimpleDateFormat("yyyy-MM-dd"); //Formatação da leitura de anos
-            Date dataAux;
-
             leitor.readLine(); //Pulando a primeira linha do csv que contem metadados
             file.writeInt(0); //Espaçor eservado para um int metadado de cabeçalho
 
@@ -54,10 +53,10 @@ public class CRUD {
                  * linhaSeparada[7] -> Nationality
                  */
 
-                dataAux = formatarData.parse(linhaSeparada[6]); //Convertendo String em Date
+                LocalDate formatDate = LocalDate.parse(linhaSeparada[6], DateTimeFormatter.ISO_DATE);
 
                 //Registrando os valores lidos dentro da classe
-                pilotos.registrar(linhaSeparada[1], linhaSeparada[4], linhaSeparada[5], linhaSeparada[7],linhaSeparada[2], dataAux, linhaSeparada[3]);
+                pilotos.registrar(linhaSeparada[1], linhaSeparada[4], linhaSeparada[5], linhaSeparada[7],linhaSeparada[2], formatDate, linhaSeparada[3]);
 
                 file.seek(0); //Posicionando ponteiro para inicio do cabeçalho, onde possui o metadados para IDs utilizados, copiando o ID do próprio CSV
                 file.writeInt(Integer.parseInt(linhaSeparada[0])); //Escrevendo o ID utilizado do drivers.csv
@@ -81,10 +80,6 @@ public class CRUD {
             System.out.println("\nErro ao criar arquivo.");
             e.printStackTrace();
         }
-        catch (ParseException pe){
-            System.out.println("\nErro ao realizar conversão de valores.");
-            pe.printStackTrace();
-        };
     }
 
     /*
