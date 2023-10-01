@@ -167,4 +167,15 @@ public class driverNode {
         System.out.println("Data de Nascimento: " + formatarData.format(this.date));
         System.out.println("");//Quebra de linha
     }
+
+    public String toCSVLine() {
+        return String.valueOf(this.ID) + "," +
+        this.reference + "," +
+        this.driverNum + "," +
+        this.code + "," +
+        this.name + "," +
+        this.surname + "," +
+        String.valueOf(this.date) + "," +
+        this.nationality + "\n"; 
+    }
 }

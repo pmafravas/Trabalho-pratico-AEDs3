@@ -1,6 +1,9 @@
 package src;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -152,5 +155,29 @@ public class TP {
             }
 
         } while (opcao != 0);
+    }
+
+    /*
+     * Método para exportar o arquivo database para uma nova lista csv
+     * Method to export the database file to a new csv list
+     */
+    public static void writeToCSV(RandomAccessFile database) throws Exception {
+        SimpleDateFormat formatarData = new SimpleDateFormat("dd/MM/yyyy"); //Formatação da leitura de anos
+        Date dataAux;
+        long startOfEntry;
+        BufferedWriter bw = new BufferedWriter(new FileWriter("src\\data\\drivers.csv"));
+        database.seek(4); //Pulando metadados
+        while (database.getFilePointer() < database.length()) {
+            startOfEntry = database.getFilePointer();
+            if (database.readChar() != '*') {
+                database.skipBytes(4); //Pulando indicador de tamanho
+                driverNode searchPiloto = new driverNode();
+                searchPiloto.registrar(database.readUTF(), database.readUTF(), database.readUTF(),database.readUTF(),database.readUTF(), dataAux = formatarData.parse(database.readUTF()),database.readUTF());
+                bw.write(searchPiloto.toCSVLine());
+            } else {
+                database.seek(startOfEntry + database.readInt());
+            }
+        }
+        bw.close();
     }
 }
