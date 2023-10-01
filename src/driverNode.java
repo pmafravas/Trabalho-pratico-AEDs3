@@ -5,6 +5,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class driverNode {
@@ -14,7 +16,7 @@ public class driverNode {
     private String surname; 
     private String nationality;
     private String driverNum; //O Numero de piloto deve ser uma String pois até 2014, pilotos não haviam números próprios, fazendo com que qualquer piloto que tenha corrido até 2013 efetivamente sem número.
-    private Date date; //Data de nascimento
+    private LocalDate date; //Data de nascimento
     private String code; //Abreviação por qual os pilotos atendiam em corridas
 
     //Variáveis que auxiliarão a conversão do registro para byte
@@ -36,7 +38,7 @@ public class driverNode {
     }
 
     //Método de registro de novo piloto
-    public void registrar(String reference, String name, String surname, String nationality, String driverNum, Date date, String code){
+    public void registrar(String reference, String name, String surname, String nationality, String driverNum, LocalDate date, String code){
         this.reference = reference;
         this.name = name;
         this.surname = surname;
@@ -110,11 +112,11 @@ public class driverNode {
         this.driverNum = driverNum;
     }
 
-    public Date getDate(){
+    public LocalDate getDate(){
         return date;
     }
 
-    public void setDate(Date date){
+    public void setDate(LocalDate date){
         this.date = date;
     }
 
@@ -136,6 +138,7 @@ public class driverNode {
         DOS.writeUTF(this.surname);
         DOS.writeUTF(this.nationality);
         DOS.writeUTF(this.driverNum);
+        DOS.writeUTF(this.date.toString());
         DOS.writeUTF(this.code);
 
         return BOS.toByteArray();
@@ -151,12 +154,16 @@ public class driverNode {
         this.surname = DIS.readUTF();
         this.nationality = DIS.readUTF();
         this.driverNum = DIS.readUTF();
+        String dataAux = DIS.readUTF();//Lendo data como String
         this.code = DIS.readUTF();
+
+        //Convertendo a String para data
+        LocalDate formatDate = LocalDate.parse(dataAux, DateTimeFormatter.ISO_DATE);
+        this.date = formatDate;
     }
 
     public void printRegistro(){
-        SimpleDateFormat formatarData = new SimpleDateFormat("dd/MM/yyyy"); //Formatação da leitura de anos
-
+        
         System.out.println("\nID: " + this.ID);        
         System.out.println("Referencia: " + this.reference);
         System.out.println("Codigo: " + this.code);
@@ -164,18 +171,7 @@ public class driverNode {
         System.out.println("Nome: " + this.name);
         System.out.println("Sobrenome: " + this.surname);
         System.out.println("Nacionalidade: " + this.nationality);
-        System.out.println("Data de Nascimento: " + formatarData.format(this.date));
+        System.out.println("Data de Nascimento: " + this.date.toString());
         System.out.println("");//Quebra de linha
-    }
-
-    public String toCSVLine() {
-        return String.valueOf(this.ID) + "," +
-        this.reference + "," +
-        this.driverNum + "," +
-        this.code + "," +
-        this.name + "," +
-        this.surname + "," +
-        String.valueOf(this.date) + "," +
-        this.nationality + "\n"; 
     }
 }
