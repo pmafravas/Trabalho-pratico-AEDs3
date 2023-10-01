@@ -213,7 +213,7 @@ driverId,driverRef,number,code,forename,surname,dob,nationality
 212,rebaque,\N,\N,Hector,Rebaque,1956-02-05,Mexican
 213,gabbiani,\N,\N,Beppe,Gabbiani,1957-01-02,Italian
 214,cogan,\N,\N,Kevin,Cogan,1956-03-31,American
-215,guerra,\N,\N,Miguel �?ngel,Guerra,1953-08-31,Argentine
+215,guerra,\N,\N,Miguel Ángel,Guerra,1953-08-31,Argentine
 216,stohr,\N,\N,Siegfried,Stohr,1952-10-10,Italian
 217,zunino,\N,\N,Ricardo,Zunino,1949-04-13,Argentine
 218,londono,\N,\N,Ricardo,Londoño,1949-08-08,Colombian
@@ -828,7 +828,7 @@ driverId,driverRef,number,code,forename,surname,dob,nationality
 827,lotterer,45,LOT,André,Lotterer,1981-11-19,German
 828,ericsson,9,ERI,Marcus,Ericsson,1990-09-02,Swedish
 829,stevens,28,STE,Will,Stevens,1991-06-28,British
-830,max_verstappen,1,VER,Max,Verstappen,1997-09-30,Dutch
+830,max_verstappen,33,VER,Max,Verstappen,1997-09-30,Dutch
 831,nasr,12,NAS,Felipe,Nasr,1992-08-21,Brazilian
 832,sainz,55,SAI,Carlos,Sainz,1994-09-01,Spanish
 833,merhi,98,MER,Roberto,Merhi,1991-03-22,Spanish
@@ -850,6 +850,7 @@ driverId,driverRef,number,code,forename,surname,dob,nationality
 850,pietro_fittipaldi,51,FIT,Pietro,Fittipaldi,1996-06-25,Brazilian
 851,aitken,89,AIT,Jack,Aitken,1995-09-23,British
 852,tsunoda,22,TSU,Yuki,Tsunoda,2000-05-11,Japanese
+853,mazepin,9,MAZ,Nikita,Mazepin,1999-03-02,Russian
 854,mick_schumacher,47,MSC,Mick,Schumacher,1999-03-22,German
 855,zhou,24,ZHO,Guanyu,Zhou,1999-05-30,Chinese
 856,de_vries,21,DEV,Nyck,de Vries,1995-02-06,Dutch

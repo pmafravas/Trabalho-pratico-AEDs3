@@ -1,4 +1,3 @@
-package src;
 import java.io.BufferedWriter;
 import java.io.EOFException;
 import java.io.FileWriter;
@@ -167,7 +166,7 @@ public class TP {
      */
     public static void convertDbToCsv(CRUD crud) throws IOException {
         RandomAccessFile file; //Declaracao de parametro file para abrir a database
-        String csvPath = "src/data/newDrivers.csv"; //Especificando caminho do novo csv
+        String csvPath = "data/newDrivers.csv"; //Especificando caminho do novo csv
 
         try {
             //Abrindo Writer com o CSV
@@ -179,7 +178,7 @@ public class TP {
             bufferedWriter.write(header); //Escrevendo a header
             bufferedWriter.newLine(); //Faz a quebra de linha
             
-            file = new RandomAccessFile("src/data/driversDB.db", "rw"); //Abrindo o database no modo escrita e leitura
+            file = new RandomAccessFile("data/driversDB.db", "rw"); //Abrindo o database no modo escrita e leitura
             file.seek(4); //Pulando o cabeçalho de metadados
 
             while(true) { //Enquanto houver conteudo, haverá uma repetição

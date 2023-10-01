@@ -1,4 +1,3 @@
-package src;
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.FileReader;
@@ -12,7 +11,7 @@ import java.util.Date;
 
 public class CRUD {
     public driverNode pilotos = new driverNode(); //Declaração de um objeto driverNode para que possa haver a atribuição de novos valores
-    String path = "src/data/driversDB.db"; //String contendo todo o caminho para o arquivo database
+    String path = "data/driversDB.db"; //String contendo todo o caminho para o arquivo database
     
     //Leitores de arquivos que serão utilizados com os arquivos
     RandomAccessFile file;
@@ -25,7 +24,7 @@ public class CRUD {
     public void createFirstFile() throws IOException{
         try {
             //Abertura de arquivos para leitura
-            csv = new FileReader("src\\data\\drivers.csv"); //Abrindo arquivo CSV para recuperar dados
+            csv = new FileReader("data/drivers.csv"); //Abrindo arquivo CSV para recuperar dados
             BufferedReader leitor = new BufferedReader(csv);
 
             file = new RandomAccessFile(path, "rw"); //Abrindo-Criando arquivo database para escrita
@@ -196,7 +195,11 @@ public class CRUD {
                                 file.seek(pos);
                                 file.writeChar('*');
                                 pilotos = registroNovo;
-                                create();
+                                file.seek(file.length());
+                                byte[] ba = pilotos.toByteArray(); 
+                                file.writeChar(' '); 
+                                file.writeInt(ba.length); 
+                                file.write(ba); 
                                 return true;
                             }
                         }
