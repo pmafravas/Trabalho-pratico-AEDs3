@@ -1,4 +1,4 @@
-﻿driverId,driverRef,number,code,forename,surname,dob,nationality
+driverId,driverRef,number,code,forename,surname,dob,nationality
 1,hamilton,44,HAM,Lewis,Hamilton,1985-01-07,British
 2,heidfeld,\N,HEI,Nick,Heidfeld,1977-05-10,German
 3,rosberg,6,ROS,Nico,Rosberg,1985-06-27,German

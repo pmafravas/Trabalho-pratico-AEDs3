@@ -1,5 +1,7 @@
 package src;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -33,7 +35,8 @@ public class TP {
                 "[02] - CRUD - Create.\n" +
                 "[03] - CRUD - Read.\n" +
                 "[04] - CRUD - Update.\n" +
-                "[05] - CRUD - Delete]\n" +
+                "[05] - CRUD - Delete\n" +
+                "[06] - Export DB as CSV\n" +
                 "[00] - Sair\n" 
             );
             System.out.print("Digite uma opção: ");
@@ -145,6 +148,11 @@ public class TP {
                         System.out.println("\nNao foi possivel encontrar o registro.");
                     }
                     break;
+
+                case 6: //CSV Export
+                    convertDbToCsv();
+                    break;
+                    
                 case 0:
                     System.out.println("\nDesligando...");
                     scan.close();
@@ -159,25 +167,37 @@ public class TP {
 
     /*
      * Método para exportar o arquivo database para uma nova lista csv
-     * Method to export the database file to a new csv list
      */
-    public static void writeToCSV(RandomAccessFile database) throws Exception {
-        SimpleDateFormat formatarData = new SimpleDateFormat("dd/MM/yyyy"); //Formatação da leitura de anos
-        Date dataAux;
-        long startOfEntry;
-        BufferedWriter bw = new BufferedWriter(new FileWriter("src\\data\\drivers.csv"));
-        database.seek(4); //Pulando metadados
-        while (database.getFilePointer() < database.length()) {
-            startOfEntry = database.getFilePointer();
-            if (database.readChar() != '*') {
-                database.skipBytes(4); //Pulando indicador de tamanho
-                driverNode searchPiloto = new driverNode();
-                searchPiloto.registrar(database.readUTF(), database.readUTF(), database.readUTF(),database.readUTF(),database.readUTF(), dataAux = formatarData.parse(database.readUTF()),database.readUTF());
-                bw.write(searchPiloto.toCSVLine());
-            } else {
-                database.seek(startOfEntry + database.readInt());
+    public static void convertDbToCsv() {
+        try (DataInputStream input = new DataInputStream(new FileInputStream("src\\data\\driversDB.db"));
+             FileWriter output = new FileWriter("src\\data\\new-drivers.csv")) {
+
+            while (input.available() > 0) {
+                int size = input.readInt();
+
+                if (input.readChar() != '*') { // Se o registro não estiver marcado como deletado
+                    int ID = input.readInt();
+                    String reference = input.readUTF();
+                    String driverNum = input.readUTF();
+                    String code = input.readUTF();
+                    String name = input.readUTF();
+                    String surname = input.readUTF();
+                    Date date = new Date(input.readLong());
+                    String nationality = input.readUTF();
+
+                    // Escrever os dados no arquivo CSV
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    output.write(ID + "," + reference + "," + name + "," + surname + "," + nationality + ","
+                            + driverNum + "," + dateFormat.format(date) + "," + code + "\n");
+                } else {
+                    // Se o registro estiver marcado como deletado, pule para o próximo registro
+                    input.skipBytes(size);
+                }
             }
+            System.out.println("Conversão concluída com sucesso.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        bw.close();
     }
 }
