@@ -1,13 +1,13 @@
 package src;
 import java.io.BufferedWriter;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.EOFException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -24,10 +24,6 @@ public class TP {
         Scanner scan = new Scanner(System.in);
         CRUD crud = new CRUD();
         int opcao;
-
-        SimpleDateFormat formatarData = new SimpleDateFormat("dd/MM/yyyy"); //Formatação da leitura de anos
-        Date dataAux;
-
 
         do {
             System.out.println("\n\n ------- MENU -------\n" + 
@@ -70,15 +66,15 @@ public class TP {
                         System.out.println("Digite o numero do piloto:");
                         String driverNum = scan.nextLine();
 
-                        System.out.println("Digite a data de nascimento do piloto (dd/mm/yyyy):");
+                        System.out.println("Digite a data de nascimento do piloto (dd-mm-yyyy):");
                         String date = scan.nextLine();
                         
-                        dataAux = formatarData.parse(date);
+                        LocalDate dataAux = LocalDate.parse(date, DateTimeFormatter.ISO_DATE);
                         //Formatando a data para o padrao usado.
                         crud.pilotos.registrar(reference, name, surname, nationality, driverNum, dataAux, code); //Repassando atributos e criando
                         crud.create();
                     } 
-                    catch (ParseException e) {
+                    catch (Exception e) {
                         System.out.println("\nProblema com a formatação da data:");
                         e.printStackTrace();
                     }
@@ -117,12 +113,13 @@ public class TP {
                         String code = scan.nextLine();
                         System.out.println("Digite o numero do piloto:");
                         String driverNum = scan.nextLine();
-                        System.out.println("Digite a data de nascimento do piloto (dd/mm/yyyy):");
+                        System.out.println("Digite a data de nascimento do piloto (yyyy-mm-dd):");
                         String date = scan.nextLine();
-                        dataAux = formatarData.parse(date);
+
+                        LocalDate dateAux = LocalDate.parse(date, DateTimeFormatter.ISO_DATE); //Convertendo a String recebida para LocalDate
 
                         crud.pilotos.setID(id2);
-                        crud.pilotos.registrar(reference, name, surname, nationality, driverNum, dataAux, code); //Repassando atributos e criando
+                        crud.pilotos.registrar(reference, name, surname, nationality, driverNum, dateAux, code); //Repassando atributos e criando
                         
                         if(crud.update(id2)) { //Checando se é possível atualizar
                             System.out.println("\nRegistro atualizado.");
@@ -131,7 +128,7 @@ public class TP {
                             System.out.println("\nNao foi possivel encontrar o ID informado.");
                         }
                     }
-                    catch(ParseException e){    
+                    catch(Exception e){    
                         System.out.println("\nErro na formatacao da data:");
                         e.printStackTrace();
                     }
@@ -150,7 +147,7 @@ public class TP {
                     break;
 
                 case 6: //CSV Export
-                    convertDbToCsv();
+                    convertDbToCsv(crud);
                     break;
                     
                 case 0:
@@ -168,36 +165,56 @@ public class TP {
     /*
      * Método para exportar o arquivo database para uma nova lista csv
      */
-    public static void convertDbToCsv() {
-        try (DataInputStream input = new DataInputStream(new FileInputStream("src\\data\\driversDB.db"));
-             FileWriter output = new FileWriter("src\\data\\new-drivers.csv")) {
+    public static void convertDbToCsv(CRUD crud) throws IOException {
+        RandomAccessFile file; //Declaracao de parametro file para abrir a database
+        String csvPath = "src/data/newDrivers.csv"; //Especificando caminho do novo csv
 
-            while (input.available() > 0) {
-                int size = input.readInt();
+        try {
+            //Abrindo Writer com o CSV
+            FileWriter fileWriter = new FileWriter(csvPath);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-                if (input.readChar() != '*') { // Se o registro não estiver marcado como deletado
-                    int ID = input.readInt();
-                    String reference = input.readUTF();
-                    String driverNum = input.readUTF();
-                    String code = input.readUTF();
-                    String name = input.readUTF();
-                    String surname = input.readUTF();
-                    Date date = new Date(input.readLong());
-                    String nationality = input.readUTF();
+            //Escrevendo primeira header
+            String header = "driverId,driverRef,number,code,forename,surname,dob,nationality";
+            bufferedWriter.write(header); //Escrevendo a header
+            bufferedWriter.newLine(); //Faz a quebra de linha
+            
+            file = new RandomAccessFile("src/data/driversDB.db", "rw"); //Abrindo o database no modo escrita e leitura
+            file.seek(4); //Pulando o cabeçalho de metadados
 
-                    // Escrever os dados no arquivo CSV
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                    output.write(ID + "," + reference + "," + name + "," + surname + "," + nationality + ","
-                            + driverNum + "," + dateFormat.format(date) + "," + code + "\n");
-                } else {
-                    // Se o registro estiver marcado como deletado, pule para o próximo registro
-                    input.skipBytes(size);
+            while(true) { //Enquanto houver conteudo, haverá uma repetição
+                try{
+                    if(file.readChar() != '*'){ //Se o registro não estiver deletado
+
+                        //Realizando a pré-carga da classe pilotos
+                        byte[] ba = new byte[file.readInt()]; //Criando vetor de bytes do tamanho do registro
+                        file.readFully(ba); //Lendo o registro em bytes
+                        crud.pilotos.fromByteArray(ba); //Lendo o registro do vetor de btyes de modo organizado
+
+                        //Pegando valores não String
+                        int idPiloto = crud.pilotos.getID();
+                        LocalDate datePiloto = crud.pilotos.getDate();
+
+                        //Criando vetor de String com diversos valores do piloto
+                        String[] linha = {Integer.toString(idPiloto), crud.pilotos.getReference(), crud.pilotos.getDriverNumber(), crud.pilotos.getCode(), crud.pilotos.getName(), crud.pilotos.getSurname(), datePiloto.toString(), crud.pilotos.getNatiotanlity()};
+                        String linhaUnida = String.join(",", linha); //Unindo o vetor de String e separando com virgula
+                        bufferedWriter.write(linhaUnida); //Escrevendo linha no CSV
+                        bufferedWriter.newLine(); //Criando nova linha
+                    }
+                    else{
+                        file.skipBytes(file.readInt());
+                    }
+                }
+                catch(EOFException e){
+                    break;
                 }
             }
-            System.out.println("Conversão concluída com sucesso.");
-
-        } catch (IOException e) {
+            bufferedWriter.close();
+        } 
+        catch (IOException e) {
             e.printStackTrace();
         }
+
+        System.out.println("Database convertida para CSV");
     }
 }
