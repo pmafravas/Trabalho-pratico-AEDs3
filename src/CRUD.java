@@ -226,6 +226,11 @@ public class CRUD {
         return false;
     }
 
+    /*
+     * Procedimento para deletar um registro.
+     * Parametros: int ID -> Contem o ID do registro em que se deseja deletar
+     * Retorno: true/false
+     */
     public boolean delete(int id){
         try{
             file = new RandomAccessFile(path, "rw"); //Abrindo arquivo no modo leitura e escrita
