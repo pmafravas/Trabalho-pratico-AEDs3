@@ -3,11 +3,8 @@ import java.io.EOFException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class CRUD {
     public driverNode pilotos = new driverNode(); //Declaração de um objeto driverNode para que possa haver a atribuição de novos valores
