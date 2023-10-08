@@ -1,0 +1,74 @@
+
+# Trabalho Prático AEDs III
+
+O trabalho consiste na leitura de um base de dados no formato CSV (comma-separated values) baixada do website https://www.kaggle.com, contendo informações sobre pilotos de fórmula um, transformação dos dados obtidos para o formato binário (arquivo .db), realização de operações de CRUD (create, read, update, delete), ordenação externa, compactação, e criptografia sobre a base.
+
+
+## Autores
+
+- [@millionsnake](https://github.com/millionsnake)
+- [@gmvas](https://github.com/gmvas)
+
+
+## Funcionalidades (08/10/2023)
+
+- Leitura do arquivo CSV e construção da base de dados.
+- Criação de novo registro.
+- Leitura de registro por ID.
+- Atualização de registro existente por ID.
+- Exclusão de registro por ID.
+- Exportação da base no formato CSV
+
+## Vídeo de demonstração
+
+- https://youtu.be/8LSf2V4ZNdY
+
+
+## Instalação (Linux)
+O projeto não necessita de software ou pacotes adicionais para seu funcionamento, porém, como foi escrito em Java, é necessário que o usuário verifique se possui uma versão do JRE (Java Runtime Environment) em seu dispositivo, pacote que inclui a máquina virtual Java, bibliotecas básicas, e o interpretador de ByteCode.
+
+Para verificar a presença do JRE, basta executar o comando a seguir no terminal:
+
+```bash
+java -version
+```
+
+Se o pacote ainda não estava presente na máquina, uma mensagem como a exemplificada a seguir deve aparecer:
+
+```bash
+Command 'java' not found, but can be installed with:
+
+sudo apt install openjdk-11-jre-headless  # version 11.0.11+9-0ubuntu2~20.04, or
+sudo apt install default-jre              # version 2:1.11-72
+sudo apt install openjdk-13-jre-headless  # version 13.0.7+5-0ubuntu1~20.04
+sudo apt install openjdk-16-jre-headless  # version 16.0.1+9-1~20.04
+sudo apt install openjdk-8-jre-headless   # version 8u292-b10-0ubuntu1~20.04
+```
+
+Nesse caso, para realizar a instalação, basta executar:
+
+```bash
+sudo apt update
+```
+
+E então:
+
+```bash
+sudo apt install default-jre
+```
+
+## Execução
+
+Tendo em mente que este programa foi feito até o momento tendo em mente a execução completmente dentro do terminal, para dar início à execução é necessário que o usuário, através do terminal, abra o diretório "bin", e execute o programa com o comando  seguir:
+
+```bash
+java TP
+```
+
+Este projeto possui os arquivos .java, juntamente do CSV gerador do banco de dados no diretório "src".
+
+## Versões Futuras
+- Ordenação externa (heap).
+- Arquivo de índices (árvore B ou tabela hash).
+- Compressão
+- Criptografia
