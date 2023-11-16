@@ -2,12 +2,12 @@ import java.io.FileReader;
 import java.io.RandomAccessFile;
 
 public class chaveIndice {
+    driverNode pilotos = new driverNode(); //Classe pilotos para utilização dentro do código
+    String pathOrigem = "src/data/driversDB.db"; //String contendo caminho da base de dados para realizar leitura    
+    String pathIndex = "src/data/index.db"; //String contendo caminho da base de dados para realizar leitura
+
+        
     void createIndex(){
-        driverNode pilotos = new driverNode();
-
-        String pathOrigem = "data/driversDB.db"; //String contendo caminho da base de dados para realizar leitura    
-        String pathIndex = "data/index.db"; //String contendo caminho da base de dados para realizar leitura
-
         
         //Leitores de arquivos que serão utilizados com os arquivos
         RandomAccessFile arquivoOrigem;
@@ -17,11 +17,12 @@ public class chaveIndice {
         try {
             arquivoOrigem = new RandomAccessFile(pathOrigem, "rw"); // Abetura do arquivo            
             arquivoIndex = new RandomAccessFile(pathIndex, "rw"); // Abertura/Criação do arquivo de índices
-            
-            arquivoOrigem.setLength(0); //Zerando ponteiro
-            arquivoIndex.setLength(0); //Zerando ponteiro 
+            int quantidadeIDs = 0;
+            int IDloop = 0;
+           // arquivoOrigem.setLength(0); //Zerando ponteiro
+           // arquivoIndex.setLength(0); //Zerando ponteiro 
 
-            arquivoOrigem.seek(4); //Pulando metadados do ID
+            quantidadeIDs = arquivoOrigem.readInt(); //Lendo quantidade de IDs, provisionado pelo metadados
 
             /*
              * ORDEM DE LEITURA DO ARQUIVO DB:
@@ -35,7 +36,7 @@ public class chaveIndice {
              * -CODIGO (abreviação do nome)
              */
 
-            while (true) {
+            while (IDloop >= quantidadeIDs) {
                 try {
                     long posicaoByte;
                     
@@ -57,6 +58,8 @@ public class chaveIndice {
 
                         arquivoIndex.writeInt(pilotos.ID); //Escrevendo ID do piloto que também servirá como ID do arquivo
                         arquivoIndex.writeLong(posicaoByte); //Escrevendo posição dos bytes do respectivo ID - bem onde se encontra o Int indicador de tamanho
+
+                        IDloop++; //Aumetando a quantidade de IDs lidos
                     }
                     else{
                         arquivoOrigem.skipBytes(arquivoOrigem.readInt()); //Se estiver deletado, pula X bytes para mudar de registro, como indicado no inicio do registro.
@@ -72,5 +75,28 @@ public class chaveIndice {
             e.printStackTrace();
         }
         
+    }
+
+    void exibirIndex(){
+        RandomAccessFile index;
+
+        try {
+            index = new RandomAccessFile(pathIndex, "rw"); //Abrindo arquivo
+            while (true) {
+                //Variáveis para leitura
+                int IDleitura;
+                long byteLeitura;
+                
+                //Leitura de dados
+                IDleitura = index.readInt();
+                byteLeitura = index.readLong();
+
+                //Exibição de dados
+                System.out.println("ID: " + IDleitura + " - byte: " + byteLeitura);
+
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 }
