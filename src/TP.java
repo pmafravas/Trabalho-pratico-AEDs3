@@ -19,6 +19,7 @@ public class TP {
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
         CRUD crud = new CRUD();
+        chaveIndice Index = new chaveIndice();
         int opcao;
 
         do {
@@ -29,6 +30,8 @@ public class TP {
                 "[04] - CRUD - Update.\n" +
                 "[05] - CRUD - Delete\n" +
                 "[06] - Export DB as CSV\n" +
+                "[07] - Criar Index\n" + 
+                "[08] - Exibir Index\n" +
                 "[00] - Sair\n" 
             );
             System.out.print("Digite uma opção: ");
@@ -146,6 +149,15 @@ public class TP {
                     convertDbToCsv(crud);
                     break;
                     
+                case 7:
+                    Index.createIndex();
+                    System.out.println("Índice criado com sucesso!");
+                    break;
+
+                case 8:
+                    Index.exibirIndex();
+                    break;
+
                 case 0:
                     System.out.println("\nDesligando...");
                     scan.close();
@@ -163,7 +175,7 @@ public class TP {
      */
     public static void convertDbToCsv(CRUD crud) throws IOException {
         RandomAccessFile file; //Declaracao de parametro file para abrir a database
-        String csvPath = "data/newDrivers.csv"; //Especificando caminho do novo csv
+        String csvPath = "src/data/newDrivers.csv"; //Especificando caminho do novo csv
 
         try {
             //Abrindo Writer com o CSV
@@ -175,7 +187,7 @@ public class TP {
             bufferedWriter.write(header); //Escrevendo a header
             bufferedWriter.newLine(); //Faz a quebra de linha
             
-            file = new RandomAccessFile("data/driversDB.db", "rw"); //Abrindo o database no modo escrita e leitura
+            file = new RandomAccessFile("src/data/driversDB.db", "rw"); //Abrindo o database no modo escrita e leitura
             file.seek(4); //Pulando o cabeçalho de metadados
 
             while(true) { //Enquanto houver conteudo, haverá uma repetição
