@@ -14,9 +14,11 @@ public class CRUD {
     RandomAccessFile file;
     FileReader csv;
 
-    /*
+    /**
      * Procedimento de Criação de novo registro
-     * Parametros: null
+     * - Abre o arquivo drivers.csv original e lêe linha por linha, separando e transferindo seus conteúdos para a classe driverNode
+     * @see driverNode
+     * @throws IOException
      */
     public void createFirstFile() throws IOException{
         try {
@@ -78,9 +80,9 @@ public class CRUD {
         }
     }
 
-    /*
+    /**
      * Procedimento de criação de novos registros por meio do usuario
-     * Parametros: null
+     * - Recebe, por meio de input do usuário, dados para criação de um novo piloto
      */
     public void create(){
         try {
@@ -108,11 +110,13 @@ public class CRUD {
         }
     }
 
-    /*
+    
+    /**
      * Procedimento para leitura de registros existentes, retornando um bool verdadeiro ou falso para o comando originatário, onde
-     * será interpretado sua resposta.
-     * Parametro: int ID -> Contem o ID do piloto desejado pelo usuario
-     * Retorno: true/false
+     * será interpretado sua resposta. 
+     *  
+     * @param id -> Contem o ID do piloto desejado pelo usuario
+     * @return true/false
      */
     public boolean read (int id){
         try {
@@ -151,10 +155,10 @@ public class CRUD {
         return false;
     }
 
-    /*
+    /**
      * Procedimento para realizar um update de um registro já existente.
-     * Parametros: int ID -> Contem o ID do registro em que se deseja fazer a bsuca
-     * Retorno: true/false
+     * @param id -> Contem o ID do registro em que se deseja fazer a busca
+     * @return true/false
      */
     public boolean update(int id) {
         try {
@@ -221,10 +225,10 @@ public class CRUD {
         return false;
     }
 
-    /*
+    /**
      * Procedimento para deletar um registro.
-     * Parametros: int ID -> Contem o ID do registro em que se deseja deletar
-     * Retorno: true/false
+     * @param id -> Contem o ID do registro em que se deseja deletar
+     * @return true/false
      */
     public boolean delete(int id){
         try{

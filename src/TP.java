@@ -7,12 +7,16 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-/*
- * Arquivo principal do TP1 AED3
- * Autor: Pedro Mafra Vasconcelos & Alessandro
- * 
+/**
+ * Arquivo principal do Trabalho Prático de AED3 -
  * A respeito: Utilizar alguma base de dados existente para realizar inserção no código, simulando os inúmeros registros de uma base de dados,
  * utilizando as técnicas de CRUD, armazenamento, ordenação e listagem apresentados nas aulas de AEDs3.
+ * 
+ * @author Pedro Mafra
+ * @author Alessandro
+ * @see driverNode
+ * @see chaveIndice
+ * @see CRUD
  */
 
 public class TP {
@@ -170,8 +174,15 @@ public class TP {
         } while (opcao != 0);
     }
 
-    /*
-     * Método para exportar o arquivo database para uma nova lista csv
+    /**
+     * Método para exportar o arquivo database para uma nova lista csv.
+     * 
+     * - Método abre ou cria o documento newDrivers.csv para fazer sua escrita. É escrito a primeira linha de metadados
+     * que se mantem a mesma independente da situação e em seguida é recuperado do DriversDB.db os pilotos com a 
+     * modificação do CRUD
+     * @param crud
+     * @throws IOException
+     * @see CRUD
      */
     public static void convertDbToCsv(CRUD crud) throws IOException {
         RandomAccessFile file; //Declaracao de parametro file para abrir a database

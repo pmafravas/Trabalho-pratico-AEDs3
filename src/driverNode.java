@@ -22,7 +22,9 @@ public class driverNode {
     private ByteArrayInputStream BAS;
     private ByteArrayOutputStream BOS;
 
-    //Construtor básico de um registro sem informações
+    /**
+     * Construtor básico de um registro sem informações
+     */
     public driverNode(){
         this.ID = 0;
         this.reference = null;
@@ -34,7 +36,16 @@ public class driverNode {
         this.code = null;
     }
 
-    //Método de registro de novo piloto
+    /**
+     * Método de registro de novo piloto
+     * @param reference
+     * @param name
+     * @param surname
+     * @param nationality
+     * @param driverNum
+     * @param date
+     * @param code
+     */
     public void registrar(String reference, String name, String surname, String nationality, String driverNum, LocalDate date, String code){
         this.reference = reference;
         this.name = name;
@@ -45,7 +56,10 @@ public class driverNode {
         this.code = code;
     }
 
-    //Método para copiar o registro de um registro anterior
+    /**
+     * Método para copiar o registro de um registro anterior
+     * @param objeto
+     */
     public void registrar(driverNode objeto){
         this.ID = objeto.ID;
         this.reference = objeto.reference;
@@ -125,7 +139,11 @@ public class driverNode {
         this.code = code;
     }
 
-    //Método para transforma todos os objetos em um vetor de bytes
+    /**
+     * Método para transforma todos os objetos em um vetor de bytes
+     * @return Byte Array com as informações de piloto
+     * @throws IOException
+     */
     public byte[] toByteArray() throws IOException {
         this.BOS = new ByteArrayOutputStream();
         this.DOS = new DataOutputStream(BOS);
@@ -141,7 +159,11 @@ public class driverNode {
         return BOS.toByteArray();
     }
 
-    //Método para transformar um vetor de bytes lido em um objeto 
+    /**
+     * Método para transformar um vetor de bytes lido em um objeto 
+     * @param ba (Byte Array)
+     * @throws IOException
+     */
     public void fromByteArray(byte[] ba) throws IOException {
         this.BAS = new ByteArrayInputStream(ba);
         this.DIS = new DataInputStream(BAS);
@@ -159,6 +181,9 @@ public class driverNode {
         this.date = formatDate;
     }
 
+    /**
+     * Método para imprimir de forma formatada as informações de um piloto
+     */
     public void printRegistro(){
         
         System.out.println("\nID: " + this.ID);        

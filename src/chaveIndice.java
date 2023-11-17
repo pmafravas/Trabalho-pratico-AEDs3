@@ -7,6 +7,11 @@ public class chaveIndice {
     String pathIndex = "src/data/index.db"; //String contendo caminho da base de dados para realizar leitura
 
         
+    /**
+     * Método que realiza a criação de um índice.
+     * - Abre o documento driversDB para fazer uma leitura e assim escrever em um novo documento
+     * o ID do piloto e o respectivo byte onde se encontra.
+     */
     void createIndex(){
         
         //Leitores de arquivos que serão utilizados com os arquivos
@@ -19,8 +24,6 @@ public class chaveIndice {
             arquivoIndex = new RandomAccessFile(pathIndex, "rw"); // Abertura/Criação do arquivo de índices
             int quantidadeIDs = 0;
             int IDloop = 0;
-           // arquivoOrigem.setLength(0); //Zerando ponteiro
-           // arquivoIndex.setLength(0); //Zerando ponteiro 
 
             quantidadeIDs = arquivoOrigem.readInt(); //Lendo quantidade de IDs, provisionado pelo metadados
 
@@ -77,6 +80,10 @@ public class chaveIndice {
         
     }
 
+    /**
+     * Método para imprimir um índice existente no console.
+     * É aberto o documento de índice criado pelo createIndex() e exibe de forma formatada, suas informações.
+     */
     void exibirIndex(){
         RandomAccessFile index;
 
@@ -96,7 +103,8 @@ public class chaveIndice {
 
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            System.out.println("Não foi possível ler o arquivo index.db:");
+            e.printStackTrace();
         }
     }
 }
