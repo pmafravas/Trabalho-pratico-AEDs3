@@ -1,7 +1,7 @@
 import java.io.FileReader;
 import java.io.RandomAccessFile;
 
-public class indiceELista {
+public class chaveIndice {
     driverNode pilotos = new driverNode(); //Classe pilotos para utilização dentro do código
     String pathOrigem = "src/data/driversDB.db"; //String contendo caminho da base de dados para realizar leitura    
     String pathIndex = "src/data/index.db"; //String contendo caminho da base de dados para realizar leitura
@@ -96,12 +96,7 @@ public class indiceELista {
 
             }
         } catch (Exception e) {
-            System.out.println("Não foi possível exibir o Index corretamente:");
-            e.printStackTrace();
+            // TODO: handle exception
         }
-    }
-
-    void criarLista(){
-         RandomAccessFile 
     }
 }
