@@ -1,4 +1,3 @@
-import java.io.FileReader;
 import java.io.RandomAccessFile;
 
 public class chaveIndice {
