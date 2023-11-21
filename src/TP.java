@@ -69,13 +69,16 @@ public class TP {
                         System.out.println("Digite o numero do piloto:");
                         String driverNum = scan.nextLine();
 
-                        System.out.println("Digite a data de nascimento do piloto (dd-mm-yyyy):");
+                        System.out.println("Digite a data de nascimento do piloto (yyyy-mm-dd):");
                         String date = scan.nextLine();
                         
                         LocalDate dataAux = LocalDate.parse(date, DateTimeFormatter.ISO_DATE);
                         //Formatando a data para o padrao usado.
                         crud.pilotos.registrar(reference, name, surname, nationality, driverNum, dataAux, code); //Repassando atributos e criando
                         crud.create();
+
+                        Index.createIndex();
+                        System.out.println("Index atualizado com sucesso!\n");
                     } 
                     catch (Exception e) {
                         System.out.println("\nProblema com a formatação da data:");
@@ -126,6 +129,9 @@ public class TP {
                         
                         if(crud.update(id2)) { //Checando se é possível atualizar
                             System.out.println("\nRegistro atualizado.");
+
+                            Index.createIndex();
+                            System.out.println("Index atualizado com sucesso!\n");
                         }
                         else{
                             System.out.println("\nNao foi possivel encontrar o ID informado.");
@@ -143,6 +149,9 @@ public class TP {
 
                     if(crud.delete(id3)) { //Deleta o registro indicado pelo ID informado
                         System.out.println("\nRegistro deletado com sucesso.");
+
+                        Index.createIndex();
+                        System.out.println("Index atualizado com sucesso!\n");
                     }
                     else {
                         System.out.println("\nNao foi possivel encontrar o registro.");

@@ -21,8 +21,8 @@ public class chaveIndice {
         try {
             arquivoOrigem = new RandomAccessFile(pathOrigem, "rw"); // Abetura do arquivo            
             arquivoIndex = new RandomAccessFile(pathIndex, "rw"); // Abertura/Criação do arquivo de índices
-            int quantidadeIDs = 0;
-            int IDloop = 0;
+            int quantidadeIDs = 0; //Numero de IDs dentro do arquivo
+            int IDloop = 1; //Quantidade de IDs lida
 
             quantidadeIDs = arquivoOrigem.readInt(); //Lendo quantidade de IDs, provisionado pelo metadados
 
@@ -38,7 +38,7 @@ public class chaveIndice {
              * -CODIGO (abreviação do nome)
              */
 
-            while (IDloop >= quantidadeIDs) {
+            while (IDloop < quantidadeIDs) {
                 try {
                     long posicaoByte;
                     
@@ -65,6 +65,7 @@ public class chaveIndice {
                     }
                     else{
                         arquivoOrigem.skipBytes(arquivoOrigem.readInt()); //Se estiver deletado, pula X bytes para mudar de registro, como indicado no inicio do registro.
+                        IDloop++;
                     }
                 }
                 catch (Exception e){
@@ -102,8 +103,7 @@ public class chaveIndice {
 
             }
         } catch (Exception e) {
-            System.out.println("Não foi possível ler o arquivo index.db:");
-            e.printStackTrace();
+            System.out.println(" --FIM DE LEITURA-- ");
         }
     }
 }
