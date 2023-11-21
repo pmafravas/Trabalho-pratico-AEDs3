@@ -36,8 +36,12 @@ public class listaInvertida {
                     * Será utilizado um Map para manter
                     * conta da incidencia dos nomes inseridos
                     */
-                    
-                    
+                    if(contagemNomes.containsKey(pilotos.getName())){ //Checando se o nome do piloto já foi inserido
+                        contagemNomes.put(pilotos.getName(), contagemNomes.get(pilotos.getName()) + 1); //Caso já exista, será reinsirindo o piloto com o seu valor int incrementado
+                    }
+                    else {
+                        contagemNomes.put(pilotos.getName(), 1); //Se for a primeira vez que o nome é inserido, sua incidencia será 1
+                    }
                 }   
                 else{
                     arquivoOrigem.skipBytes(arquivoOrigem.readInt()); //Se estiver deletado, pula X bytes para mudar de registro, como indicado no inicio do registro.
@@ -53,6 +57,10 @@ public class listaInvertida {
 
     void pesquisarListaNome(){
 
+    }
+
+    void imprimirListaInvertida(){
+        
     }
 
 }
