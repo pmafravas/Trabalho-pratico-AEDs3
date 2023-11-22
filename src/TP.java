@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 /**
@@ -89,9 +90,9 @@ public class TP {
                 case 2: //Read
                     System.out.println("Digite um ID o qual deseja ler: ");
                     int id = scan.nextInt();
+                    long busca = Index.buscarIndex(id); //Buscando o ID digitado no Indice
 
-                    //Le o ID registrado
-                    if(crud.read(id)) {
+                    if(crud.readWithIndex(id, busca)) {
                         crud.pilotos.printRegistro();
                     }
                     else {
@@ -137,7 +138,7 @@ public class TP {
                             System.out.println("\nNao foi possivel encontrar o ID informado.");
                         }
                     }
-                    catch(Exception e){    
+                    catch(DateTimeParseException e){    
                         System.out.println("\nErro na formatacao da data:");
                         e.printStackTrace();
                     }
@@ -177,16 +178,7 @@ public class TP {
                     break;
 
                 case 9:
-                    System.out.println("Digite um ID o qual deseja ler: ");
-                    int id4 = scan.nextInt();
-                    long busca = Index.buscarIndex(id4); //Buscando o ID digitado no Indice
-
-                    if(crud.readWithIndex(id4, busca)) {
-                        crud.pilotos.printRegistro();
-                    }
-                    else {
-                        System.out.println("\nNao foi possivel encontrar o piloto buscado.");
-                    }
+                    
                     break;
                 
                 case 10:
