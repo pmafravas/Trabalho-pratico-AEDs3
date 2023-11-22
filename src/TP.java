@@ -24,6 +24,7 @@ public class TP {
         Scanner scan = new Scanner(System.in);
         CRUD crud = new CRUD();
         chaveIndice Index = new chaveIndice();
+        listaInvertida LInvertida = new listaInvertida();
         int opcao;
 
         do {
@@ -36,6 +37,8 @@ public class TP {
                 "[06] - Export DB as CSV\n" +
                 "[07] - Criar Index\n" + 
                 "[08] - Exibir Index\n" +
+                "[09] - Criar Lista Invertida\n" +
+                "[10] - Exibir Lista Invertida\n" +
                 "[00] - Sair\n" 
             );
             System.out.print("Digite uma opção: ");
@@ -169,6 +172,19 @@ public class TP {
 
                 case 8:
                     Index.exibirIndex();
+                    break;
+
+                case 9:
+                    LInvertida.criarListaNome();
+                    break;
+
+                case 10:
+                    LInvertida.imprimirListaInvertida();
+                    break;
+
+                case 11:
+                    long busca = Index.buscarIndex(855); //TODO: Somente para teste
+                    System.out.println("TESTE BUSCA INDEX: " + busca);
                     break;
 
                 case 0:

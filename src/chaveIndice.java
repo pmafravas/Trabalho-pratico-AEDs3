@@ -1,10 +1,12 @@
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.List;
 
 public class chaveIndice {
     driverNode pilotos = new driverNode(); //Classe pilotos para utilização dentro do código
     String pathOrigem = "src/data/driversDB.db"; //String contendo caminho da base de dados para realizar leitura    
     String pathIndex = "src/data/index.db"; //String contendo caminho da base de dados para realizar leitura
-
+    ArrayList<Integer> idsRemovidos = new ArrayList<>(); //ArrayList que será usado para contabilizar todos os IDs removidos durante a criação do índice
         
     /**
      * Método que realiza a criação de um índice.
@@ -65,7 +67,8 @@ public class chaveIndice {
                     }
                     else{
                         arquivoOrigem.skipBytes(arquivoOrigem.readInt()); //Se estiver deletado, pula X bytes para mudar de registro, como indicado no inicio do registro.
-                        IDloop++;
+                        IDloop++; //Indicando iqual ID foi removido
+                        idsRemovidos.add(IDloop); //Adicionando o ID removido a lista para tratamentos em outros métodos
                     }
                 }
                 catch (Exception e){
@@ -105,5 +108,54 @@ public class chaveIndice {
         } catch (Exception e) {
             System.out.println(" --FIM DE LEITURA-- ");
         }
+    }
+
+    long buscarIndex(int ID){
+        RandomAccessFile index;
+        long endereco = 0;
+        int IDleitura;
+
+        try {
+            int qtdRemovidos = 0; //Variavel para contar quantos IDs removidos são maior ou iguais
+            boolean isBigger = false; //Variável responsável por indicar se o ID removido foi maior ou não, para realizar diferente tratamentos
+            index = new RandomAccessFile(pathIndex, "rw"); //Abertura do arquivo
+            createIndex(); //Atualiza o index para verificação de IDs removidos
+
+            for (int i = 0; i < idsRemovidos.size(); i++) { //Procurando por IDs removidos que tenham sejam menor que o ID de busca
+                if(ID >= idsRemovidos.get(i)){ //Iterando pelo array de IDs removidos
+                    isBigger = true;
+                    qtdRemovidos++;
+                }
+            }
+
+            if(isBigger){
+                for(int IDloop = 1; IDloop < ID-qtdRemovidos; IDloop++){ //A quantidade de IDs removidos será contabilizada para a pesquisa cair na linha certa
+                    index.skipBytes(12); //Número de bytes ocupando por um int e um long
+                }
+            }
+            else{
+                for(int IDloop = 1; IDloop < ID; IDloop++){ //Iterando pelos IDs
+                    index.skipBytes(12); //Número de bytes ocupando por um int e um long
+                }
+            }
+            
+            //Leitura de dados
+            IDleitura = index.readInt();
+            endereco = index.readLong();
+
+            if(IDleitura == ID){ //Verificando se o ID lido foi o correto
+                System.out.println("Busca do ID feita com sucesso!");
+            }
+            else{ //Caso não seja, o endereço será redefinido automaticamente para 0
+                System.out.println("Não foi possível encontrar o ID selecionado, ele pode ter sido removido...");
+                endereco = 0;
+            }
+        } 
+        catch (Exception e) {
+            System.out.println("Não foi possível ler o arquinvo index.db:");
+            e.printStackTrace();
+        }
+        
+        return endereco;      
     }
 }
