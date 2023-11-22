@@ -159,7 +159,7 @@ public class CRUD {
     /**
      * Método de leitura com índice
      * 
-     * <p>Este é o mesmo método de leitura, que anteriormente era sequencial, mas agora adaptador para
+     * <p>Este é o mesmo método de leitura, que anteriormente era sequencial, mas agora adaptado para
      * trabalhar com a pesquisa via Indice, onde é recebido a posição do byte do ID desejado.
      * @param id buscado pelo usuario
      * @param bytePos com a posição do id
@@ -264,6 +264,72 @@ public class CRUD {
     }
 
     /**
+     * Método de atualização com índice
+     * 
+     * <p>Este é o mesmo método de atualização, que anteriormente era sequencial, mas agora adaptado para
+     * trabalhar com a pesquisa via Indice, onde é recebido a posição do byte do ID desejado.
+     * @param id buscado pelo usuario
+     * @param bytePos com a posição do id
+     * @return <b>true</b> se encontrar o ID
+     */
+    public boolean updateWithIndex(int id, long bytePos) {
+        try {
+            file = new RandomAccessFile(path, "rw"); //Abre o arquivo criado no modo de escrita e de leitura
+            file.seek(0); //Zerando o ponteiro para o inicio do arquivo 
+
+            //Cria um objeto da classe Registro para armazenar os atributos da nova entidade que substituíra a antiga
+            driverNode registroNovo = new driverNode();
+            registroNovo.registrar(pilotos);
+
+            //Transforma o objeto em um vetor de bytes para escrita como registro
+            byte[] registroNovoByte = registroNovo.toByteArray();
+
+            file.seek(bytePos); //Definindo o ponteiro para inicio do registro, APOS a lapide
+            long posLapide = bytePos - 2; //Pega o byte do registro atual e subtrai por 2, que deixará na posição inicial da lápide
+
+            byte[] registroAntigoByte = new byte[file.readInt()]; //Lê o tamanho do registro do objeto antigo e cria um vetor de bytes com o dado tamanho
+            file.readFully(registroAntigoByte); //Lê todo o registro e escreve no vetor de bytes
+            pilotos.fromByteArray(registroAntigoByte); //Extrai o objeto antigo do vetor de bytes
+
+            //Compara os IDs dos objetos para conferir se o objeto extraído realmente é o certo a ser substituído
+            if (pilotos.getID() == registroNovo.getID()) {
+                //Confere se o registro novo é cabe dentro do espaço que havia sido alocado para o antigo registro
+                if (registroAntigoByte.length >= registroNovoByte.length) {
+                    //Caso caiba, redireciona o ponteiro para o início do registro, pula a lápide e o tamanho do registro, e escreve o novo registro. Retorna verdadeiro.
+                    file.seek(posLapide);
+                    file.readChar();
+                    file.readInt();
+                    file.write(registroNovoByte);
+                    return true;
+                } 
+                else {                    
+                    //Caso contrário, redireciona o ponteiro para o início do registro, marca o registro como inválido, e escreve o novo registro no final do arquivo. Retorna verdadeiro
+                    file.seek(posLapide);
+                    file.writeChar('*');
+                    pilotos = registroNovo;
+                    file.seek(file.length());
+                    byte[] ba = pilotos.toByteArray(); 
+                    file.writeChar(' '); 
+                    file.writeInt(ba.length); 
+                    file.write(ba); 
+                    return true;
+                }
+            }
+            else{
+                file.close();
+                System.out.println("\nRegistro não encontrado.");
+            }
+            
+        }
+        //Tratamento de exceções
+        catch(IOException e) {
+            System.out.println("\nErro ao atualizar o registro.");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
      * Procedimento para deletar um registro.
      * @param id -> Contem o ID do registro em que se deseja deletar
      * @return true/false
@@ -298,6 +364,45 @@ public class CRUD {
             }
             System.out.println("\nRegistro não encontrado.");
             file.close();
+        }
+        catch(IOException e){
+            System.out.println("\nErro ao deletar:");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * Método de deleção com índice
+     * 
+     * <p>Este é o mesmo método de deleção, que anteriormente era sequencial, mas agora adaptado para
+     * trabalhar com a pesquisa via Indice, onde é recebido a posição do byte do ID desejado.
+     * @param id buscado pelo usuario
+     * @param bytePos com a posição do id
+     * @return <b>true</b> se encontrar o ID
+     */
+    public boolean deleteWithIndex(int id, long bytePos){
+        try{
+            file = new RandomAccessFile(path, "rw"); //Abrindo arquivo no modo leitura e escrita
+            file.seek(0); //Zerando o ponteiro
+
+            file.seek(bytePos); //Pulando para o byte indicado pelo indice
+            long pos = bytePos - 2; //Salvando a posição atual do registro -> posição do Indice - quantidade de bytes ocupado pela lapide
+
+            byte[] ba = new byte[file.readInt()]; //Lendo tamanho do registro
+            file.readFully(ba); //Lê todo o registro com base no tamanho do registro
+            pilotos.fromByteArray(ba); //Extraindo o objeto do vetor
+
+            if(pilotos.getID() == id){ //Verificando se é o registro buscado
+                file.seek(pos); //Voltando a posição da lapide
+                file.writeChar('*'); //Marcando a lápide
+                file.close(); 
+                return true; //Voltando que a deleção foi feita
+            }
+            else{
+                file.close();
+                System.out.println("O ID desejado não foi encontrado.");
+            }
         }
         catch(IOException e){
             System.out.println("\nErro ao deletar:");
