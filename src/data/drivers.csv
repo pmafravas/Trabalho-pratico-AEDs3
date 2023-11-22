@@ -451,7 +451,6 @@ driverId,driverRef,number,code,forename,surname,dob,nationality
 450,vos,\N,\N,Ernie,de Vos,1941-07-01,Dutch
 451,dochnal,\N,\N,Frank,Dochnal,1920-10-08,American
 452,monarch,\N,\N,Thomas,Monarch,1945-09-03,American
-842,gasly,10,GAS,Pierre,Gasly,1996-02-07,French
 453,lewis,\N,\N,Jackie,Lewis,1936-11-01,British
 454,ricardo_rodriguez,\N,\N,Ricardo,Rodríguez,1942-02-14,Mexican
 455,seidel,\N,\N,Wolfgang,Seidel,1926-07-04,German
@@ -808,51 +807,52 @@ driverId,driverRef,number,code,forename,surname,dob,nationality
 806,oscar_gonzalez,\N,\N,Óscar,González,1923-11-10,Uruguayan
 807,hulkenberg,27,HUL,Nico,Hülkenberg,1987-08-19,German
 808,petrov,\N,PET,Vitaly,Petrov,1984-09-08,Russian
-810,grassi,\N,DIG,Lucas,di Grassi,1984-08-11,Brazilian
-811,bruno_senna,\N,SEN,Bruno,Senna,1983-10-15,Brazilian
-812,chandhok,\N,CHA,Karun,Chandhok,1984-01-19,Indian
-813,maldonado,13,MAL,Pastor,Maldonado,1985-03-09,Venezuelan
-814,resta,\N,DIR,Paul,di Resta,1986-04-16,British
-815,perez,11,PER,Sergio,Pérez,1990-01-26,Mexican
-816,ambrosio,\N,DAM,Jérôme,d'Ambrosio,1985-12-27,Belgian
-817,ricciardo,3,RIC,Daniel,Ricciardo,1989-07-01,Australian
-818,vergne,25,VER,Jean-Éric,Vergne,1990-04-25,French
-819,pic,\N,PIC,Charles,Pic,1990-02-15,French
-820,chilton,4,CHI,Max,Chilton,1991-04-21,British
-821,gutierrez,21,GUT,Esteban,Gutiérrez,1991-08-05,Mexican
-822,bottas,77,BOT,Valtteri,Bottas,1989-08-28,Finnish
-823,garde,\N,VDG,Giedo,van der Garde,1985-04-25,Dutch
-824,jules_bianchi,17,BIA,Jules,Bianchi,1989-08-03,French
-825,kevin_magnussen,20,MAG,Kevin,Magnussen,1992-10-05,Danish
-826,kvyat,26,KVY,Daniil,Kvyat,1994-04-26,Russian
-827,lotterer,45,LOT,André,Lotterer,1981-11-19,German
-828,ericsson,9,ERI,Marcus,Ericsson,1990-09-02,Swedish
-829,stevens,28,STE,Will,Stevens,1991-06-28,British
-830,max_verstappen,33,VER,Max,Verstappen,1997-09-30,Dutch
-831,nasr,12,NAS,Felipe,Nasr,1992-08-21,Brazilian
-832,sainz,55,SAI,Carlos,Sainz,1994-09-01,Spanish
-833,merhi,98,MER,Roberto,Merhi,1991-03-22,Spanish
-834,rossi,53,RSS,Alexander,Rossi,1991-09-25,American
-835,jolyon_palmer,30,PAL,Jolyon,Palmer,1991-01-20,British
-836,wehrlein,94,WEH,Pascal,Wehrlein,1994-10-18,German
-837,haryanto,88,HAR,Rio,Haryanto,1993-01-22,Indonesian
-838,vandoorne,2,VAN,Stoffel,Vandoorne,1992-03-26,Belgian
-839,ocon,31,OCO,Esteban,Ocon,1996-09-17,French
-840,stroll,18,STR,Lance,Stroll,1998-10-29,Canadian
-841,giovinazzi,99,GIO,Antonio,Giovinazzi,1993-12-14,Italian
-843,brendon_hartley,28,HAR,Brendon,Hartley,1989-11-10,New Zealander
-844,leclerc,16,LEC,Charles,Leclerc,1997-10-16,Monegasque
-845,sirotkin,35,SIR,Sergey,Sirotkin,1995-08-27,Russian
-846,norris,4,NOR,Lando,Norris,1999-11-13,British
-847,russell,63,RUS,George,Russell,1998-02-15,British
-848,albon,23,ALB,Alexander,Albon,1996-03-23,Thai
-849,latifi,6,LAT,Nicholas,Latifi,1995-06-29,Canadian
-850,pietro_fittipaldi,51,FIT,Pietro,Fittipaldi,1996-06-25,Brazilian
-851,aitken,89,AIT,Jack,Aitken,1995-09-23,British
-852,tsunoda,22,TSU,Yuki,Tsunoda,2000-05-11,Japanese
-853,mazepin,9,MAZ,Nikita,Mazepin,1999-03-02,Russian
-854,mick_schumacher,47,MSC,Mick,Schumacher,1999-03-22,German
-855,zhou,24,ZHO,Guanyu,Zhou,1999-05-30,Chinese
-856,de_vries,21,DEV,Nyck,de Vries,1995-02-06,Dutch
-857,piastri,81,PIA,Oscar,Piastri,2001-04-06,Australian
-858,sargeant,2,SAR,Logan,Sargeant,2000-12-31,American
+809,grassi,\N,DIG,Lucas,di Grassi,1984-08-11,Brazilian
+810,bruno_senna,\N,SEN,Bruno,Senna,1983-10-15,Brazilian
+811,chandhok,\N,CHA,Karun,Chandhok,1984-01-19,Indian
+812,maldonado,13,MAL,Pastor,Maldonado,1985-03-09,Venezuelan
+813,resta,\N,DIR,Paul,di Resta,1986-04-16,British
+814,perez,11,PER,Sergio,Pérez,1990-01-26,Mexican
+815,ambrosio,\N,DAM,Jérôme,d'Ambrosio,1985-12-27,Belgian
+816,ricciardo,3,RIC,Daniel,Ricciardo,1989-07-01,Australian
+817,vergne,25,VER,Jean-Éric,Vergne,1990-04-25,French
+818,pic,\N,PIC,Charles,Pic,1990-02-15,French
+819,chilton,4,CHI,Max,Chilton,1991-04-21,British
+820,gutierrez,21,GUT,Esteban,Gutiérrez,1991-08-05,Mexican
+821,bottas,77,BOT,Valtteri,Bottas,1989-08-28,Finnish
+822,garde,\N,VDG,Giedo,van der Garde,1985-04-25,Dutch
+823,jules_bianchi,17,BIA,Jules,Bianchi,1989-08-03,French
+824,kevin_magnussen,20,MAG,Kevin,Magnussen,1992-10-05,Danish
+825,kvyat,26,KVY,Daniil,Kvyat,1994-04-26,Russian
+826,lotterer,45,LOT,André,Lotterer,1981-11-19,German
+827,ericsson,9,ERI,Marcus,Ericsson,1990-09-02,Swedish
+828,stevens,28,STE,Will,Stevens,1991-06-28,British
+829,max_verstappen,33,VER,Max,Verstappen,1997-09-30,Dutch
+830,nasr,12,NAS,Felipe,Nasr,1992-08-21,Brazilian
+831,sainz,55,SAI,Carlos,Sainz,1994-09-01,Spanish
+832,merhi,98,MER,Roberto,Merhi,1991-03-22,Spanish
+833,rossi,53,RSS,Alexander,Rossi,1991-09-25,American
+834,jolyon_palmer,30,PAL,Jolyon,Palmer,1991-01-20,British
+835,wehrlein,94,WEH,Pascal,Wehrlein,1994-10-18,German
+836,haryanto,88,HAR,Rio,Haryanto,1993-01-22,Indonesian
+837,vandoorne,2,VAN,Stoffel,Vandoorne,1992-03-26,Belgian
+838,ocon,31,OCO,Esteban,Ocon,1996-09-17,French
+839,stroll,18,STR,Lance,Stroll,1998-10-29,Canadian
+840,giovinazzi,99,GIO,Antonio,Giovinazzi,1993-12-14,Italian
+841,gasly,10,GAS,Pierre,Gasly,1996-02-07,French
+842,brendon_hartley,28,HAR,Brendon,Hartley,1989-11-10,New Zealander
+843,leclerc,16,LEC,Charles,Leclerc,1997-10-16,Monegasque
+844,sirotkin,35,SIR,Sergey,Sirotkin,1995-08-27,Russian
+845,norris,4,NOR,Lando,Norris,1999-11-13,British
+846,russell,63,RUS,George,Russell,1998-02-15,British
+847,albon,23,ALB,Alexander,Albon,1996-03-23,Thai
+848,latifi,6,LAT,Nicholas,Latifi,1995-06-29,Canadian
+849,pietro_fittipaldi,51,FIT,Pietro,Fittipaldi,1996-06-25,Brazilian
+850,aitken,89,AIT,Jack,Aitken,1995-09-23,British
+851,tsunoda,22,TSU,Yuki,Tsunoda,2000-05-11,Japanese
+852,mazepin,9,MAZ,Nikita,Mazepin,1999-03-02,Russian
+853,mick_schumacher,47,MSC,Mick,Schumacher,1999-03-22,German
+854,zhou,24,ZHO,Guanyu,Zhou,1999-05-30,Chinese
+855,de_vries,21,DEV,Nyck,de Vries,1995-02-06,Dutch
+856,piastri,81,PIA,Oscar,Piastri,2001-04-06,Australian
+857,sargeant,2,SAR,Logan,Sargeant,2000-12-31,American
