@@ -1,6 +1,5 @@
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
-import java.util.List;
 
 public class chaveIndice {
     driverNode pilotos = new driverNode(); //Classe pilotos para utilização dentro do código
