@@ -155,32 +155,33 @@ public class CRUD {
         return false;
     }
     
-    public boolean readWithIndex(int id){ //TODO: adaptar para receber o id via index
+
+    /**
+     * Método de leitura com índice
+     * 
+     * <p>Este é o mesmo método de leitura, que anteriormente era sequencial, mas agora adaptador para
+     * trabalhar com a pesquisa via Indice, onde é recebido a posição do byte do ID desejado.
+     * @param id buscado pelo usuario
+     * @param bytePos com a posição do id
+     * @return <b>true</b> se encontrar o ID
+     */
+    public boolean readWithIndex(int id, long bytePos){
         try {
             file = new RandomAccessFile(path, "rw"); //Abrindo o database no modo escrita e leitura
-            file.seek(4); //Pulando o cabeçalho de metadados
+            file.seek(0);
+            file.seek(bytePos); //Pulando a quantidade de bytes indicado pelo indice
+            //file.skipBytes(bytePos);
+            try {
+                byte[] ba = new byte[file.readInt()]; //Lê o tamanho do registro e cria um novo vetor de bytes com o mesmo tamanho
+                file.readFully(ba); //Lendo todo o registro de acordo com a quantidade de bytes
+                pilotos.fromByteArray(ba); //Extrai o objeto do vetor de btyes
 
-            //Buscando pelo arquivo database de modo sequencial
-            while (true) {
-                try {
-                    if(file.readChar() != '*'){
-                        byte[] ba = new byte[file.readInt()]; //Lê o tamanho do registro e cria um novo vetor de bytes com o mesmo tamanho
-                        file.readFully(ba); //Lendo todo o registro de acordo com a quantidade de bytes
-                        pilotos.fromByteArray(ba); //Extrai o objeto do vetor de btyes
-
-                        if(id == pilotos.getID()) { //Conferindo se o ID bate
-                            //Fechando o arquivo sem tirar o objeto, assim retornando ao Menu e o usuario
-                            file.close();
-                            return true;
-                        }
-                    }
-                    else {
-                        file.skipBytes(file.readInt()); //Pulando o registro deletado
-                    }
-                } catch (EOFException e) {
-                    break;
-                }
-            }
+                if(id == pilotos.getID()) { //Conferindo se o ID bate
+                    //Fechando o arquivo sem tirar o objeto, assim retornando ao Menu e o usuario
+                    file.close();
+                    return true;
+                }   
+            } catch (EOFException e) {} 
             pilotos = new driverNode(); //Esvaziando o registro existente caso não haja correspondencia
             System.out.println("\nNão foi possivel encontrar o registro.");
             file.close();
