@@ -14,7 +14,14 @@ public class listaInvertida {
 
     Map<String, Integer> contagemNomes = new HashMap<>(); //Mapa servirá para contabilizar a incidencia dos nomes, podendo ser atualizada sempre que necessario
 
-    
+    /**
+     * Método de criação da lista invertida 
+     * <p>É aberto o arquivo driversDB.db para realizar a leitura atualizada de todos os pilotos existentes, após a leitura
+     * é inserido dentro de um HashMap os nomes, e caso um nome já tenha sido inserido, sua incidencia apenas será incrementada
+     * 
+     * @see
+     * HashMap
+     */
     void criarListaNome(){
         try {
             
@@ -66,7 +73,10 @@ public class listaInvertida {
         
     }
 
-    
+    /**
+     * Método para imprimir os valores da Lista Invertida de forma ordenada
+     * pela incidencia dos nomes
+     */
     void imprimirListaInvertida(){
         //Verificando se o Map foi carregado com
         if (contagemNomes.size() == 0) {

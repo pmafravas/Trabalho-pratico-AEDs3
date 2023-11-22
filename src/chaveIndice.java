@@ -9,8 +9,8 @@ public class chaveIndice {
         
     /**
      * Método que realiza a criação de um índice.
-     * - Abre o documento driversDB para fazer uma leitura e assim escrever em um novo documento
-     * o ID do piloto e o respectivo byte onde se encontra.
+     * <p> O método abre o documento driversDB para fazer uma leitura e assim escrever em um novo documento,
+     * o ID do piloto e seu respectivo byte de localização.
      */
     void createIndex(){
         
@@ -84,7 +84,7 @@ public class chaveIndice {
 
     /**
      * Método para imprimir um índice existente no console.
-     * É aberto o documento de índice criado pelo createIndex() e exibe de forma formatada, suas informações.
+     * <p>É aberto o documento de índice criado pelo createIndex() e exibe de forma formatada, suas informações.
      */
     void exibirIndex(){
         RandomAccessFile index;
@@ -109,6 +109,17 @@ public class chaveIndice {
         }
     }
 
+
+    /**
+     * Método para buscar o byte de um ID
+     * 
+     * <p>Esse método procura o respectivo byte de um ID. Dentro de seu arquivo <i>index.db</i> estão todos os IDs e Bytes de pilotos de tal modo que é possível
+     * calcular quantos bytes serão nescessários pular para chegar ao ID desejado.
+     * <p>É levado em consideração também os IDs deletados, onde será checado se haverá interferência dos mesmo e decidirá qual será o método correto a se 
+     * utilizar
+     * @param ID que deseja buscar
+     * @return <b>endereco</b> com o byte de localização
+     */
     long buscarIndex(int ID){
         RandomAccessFile index;
         long endereco = 0;
