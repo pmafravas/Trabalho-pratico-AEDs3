@@ -28,7 +28,7 @@ public class TP {
         int opcao;
 
         do {
-            System.out.println("\n\n ------- MENU -------\n" + 
+            System.out.println("\n ------- MENU -------\n" + 
                 "[01] - CRUD - Create.\n" +
                 "[02] - CRUD - Read.\n" +
                 "[03] - CRUD - Update.\n" +
@@ -177,8 +177,16 @@ public class TP {
                     break;
 
                 case 9:
-                    long busca = Index.buscarIndex(855); //TODO: Somente para teste
-                    System.out.println("TESTE BUSCA INDEX: " + busca);
+                    System.out.println("Digite um ID o qual deseja ler: ");
+                    int id4 = scan.nextInt();
+                    long busca = Index.buscarIndex(id4); //Buscando o ID digitado no Indice
+
+                    if(crud.readWithIndex(id4, busca)) {
+                        crud.pilotos.printRegistro();
+                    }
+                    else {
+                        System.out.println("\nNao foi possivel encontrar o piloto buscado.");
+                    }
                     break;
                 
                 case 10:

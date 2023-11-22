@@ -39,7 +39,7 @@ public class chaveIndice {
              * -CODIGO (abreviação do nome)
              */
 
-            while (IDloop < quantidadeIDs) {
+            while (IDloop <= quantidadeIDs) {
                 try {
                     long posicaoByte;
                     
@@ -67,7 +67,9 @@ public class chaveIndice {
                     else{
                         arquivoOrigem.skipBytes(arquivoOrigem.readInt()); //Se estiver deletado, pula X bytes para mudar de registro, como indicado no inicio do registro.
                         IDloop++; //Indicando iqual ID foi removido
-                        idsRemovidos.add(IDloop); //Adicionando o ID removido a lista para tratamentos em outros métodos
+                        if(!idsRemovidos.contains(IDloop)){ //Verificando se o ArrayList já possui o ID deletado para haver duplicados
+                            idsRemovidos.add(IDloop); //Adicionando o ID removido a lista para tratamentos em outros métodos
+                        }
                     }
                 }
                 catch (Exception e){
