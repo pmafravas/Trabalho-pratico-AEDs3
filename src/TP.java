@@ -29,27 +29,24 @@ public class TP {
 
         do {
             System.out.println("\n\n ------- MENU -------\n" + 
-                "[01] - Create a File DB.\n" +
-                "[02] - CRUD - Create.\n" +
-                "[03] - CRUD - Read.\n" +
-                "[04] - CRUD - Update.\n" +
-                "[05] - CRUD - Delete\n" +
-                "[06] - Export DB as CSV\n" +
-                "[07] - Criar Index\n" + 
-                "[08] - Exibir Index\n" +
-                "[09] - Criar Lista Invertida\n" +
-                "[10] - Exibir Lista Invertida\n" +
+                "[01] - CRUD - Create.\n" +
+                "[02] - CRUD - Read.\n" +
+                "[03] - CRUD - Update.\n" +
+                "[04] - CRUD - Delete\n" +
+                "[05] - DB - Create a DBFile.\n" +
+                "[06] - DB - Export DB as CSV\n" +
+                "[07] - INDEX - Criar Index\n" + 
+                "[08] - INDEX - Exibir Index\n" +
+                "[09] - INDEX - Pesquisar no Index\n" +
+                "[10] - LISTA - Criar Lista Invertida\n" +
+                "[11] - LISTA - Exibir Lista Invertida\n" +
                 "[00] - Sair\n" 
             );
             System.out.print("Digite uma opção: ");
             opcao = scan.nextInt();
             switch (opcao) {
-                case 1:
-                    crud.createFirstFile();
-                    System.out.println("\nArquivo DB criado.");
-                    break;
 
-                case 2: //Create
+                case 1: //Create
                     try {
                         //Coletando todas as informações para criação do novo piloto
                         System.out.println("Digite o nome do piloto:");
@@ -89,7 +86,7 @@ public class TP {
                     }
                     break;
 
-                case 3: //Read
+                case 2: //Read
                     System.out.println("Digite um ID o qual deseja ler: ");
                     int id = scan.nextInt();
 
@@ -102,7 +99,7 @@ public class TP {
                     }
                     break;
 
-                case 4: //Update
+                case 3: //Update
                     try{
                         System.out.println("Informe o ID do registro que deseja atualizar: ");
                         int id2 = scan.nextInt();
@@ -146,7 +143,7 @@ public class TP {
                     }
                     break;
 
-                case 5: //Delete
+                case 4: //Delete
                     System.out.println("\nDigite um ID para invalidar o seu respectivo registro: ");
                     int id3 = scan.nextInt();
 
@@ -159,6 +156,11 @@ public class TP {
                     else {
                         System.out.println("\nNao foi possivel encontrar o registro.");
                     }
+                    break;
+
+                case 5:
+                    crud.createFirstFile();
+                    System.out.println("\nArquivo DB criado.");
                     break;
 
                 case 6: //CSV Export
@@ -175,22 +177,23 @@ public class TP {
                     break;
 
                 case 9:
+                    long busca = Index.buscarIndex(855); //TODO: Somente para teste
+                    System.out.println("TESTE BUSCA INDEX: " + busca);
+                    break;
+                
+                case 10:
                     LInvertida.criarListaNome();
                     break;
 
-                case 10:
-                    LInvertida.imprimirListaInvertida();
-                    break;
-
                 case 11:
-                    long busca = Index.buscarIndex(855); //TODO: Somente para teste
-                    System.out.println("TESTE BUSCA INDEX: " + busca);
+                    LInvertida.imprimirListaInvertida();
                     break;
 
                 case 0:
                     System.out.println("\nDesligando...");
                     scan.close();
                     break;
+
                 default:
                     System.out.println("\nOpção invalida.\n");
                     break;
