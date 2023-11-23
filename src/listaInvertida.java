@@ -2,10 +2,11 @@ import java.io.EOFException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class listaInvertida {
 
@@ -13,19 +14,24 @@ public class listaInvertida {
     String pathOrigem = "src/data/driversDB.db"; //String contendo caminho da base de dados para realizar leitura    
     RandomAccessFile arquivoOrigem;
 
-    Map<String, Integer> contagemNomes = new HashMap<>(); //Mapa servirá para contabilizar a incidencia dos nomes, podendo ser atualizada sempre que necessario
+    Map<String, DadosNome> contagemNomes; //Mapa servirá para contabilizar a incidencia dos nomes, podendo ser atualizada sempre que necessario
+
+    listaInvertida(){
+        this.contagemNomes = new HashMap<>();
+    }
 
     /**
      * Método de criação da lista invertida 
      * <p>É aberto o arquivo driversDB.db para realizar a leitura atualizada de todos os pilotos existentes, após a leitura
      * é inserido dentro de um HashMap os nomes, e caso um nome já tenha sido inserido, sua incidencia apenas será incrementada
      * 
-     * @see
-     * HashMap
+     * @see HashMap
+     * @see DadosNome
+     * @see ArrayList
+     * 
      */
     void criarListaNome(){
         try {
-            
             arquivoOrigem = new RandomAccessFile(pathOrigem, "rw"); //Abrindo arquivo para leitura
             int quantidadeIDs = 0;
             int IDloop = 1;
@@ -45,14 +51,15 @@ public class listaInvertida {
  
                     /*
                     * Em seguida é feita a inserção do nome na Lista
-                    * Será utilizado um Map para manter
-                    * conta da incidencia dos nomes inseridos
+                    * 
                     */
-                    if(contagemNomes.containsKey(pilotos.getName())){ //Checando se o nome do piloto já foi inserido
-                        contagemNomes.put(pilotos.getName(), contagemNomes.get(pilotos.getName()) + 1); //Caso já exista, será reinsirindo o piloto com o seu valor int incrementado
+
+                    DadosNome novoIndice = this.contagemNomes.get(pilotos.getName()); //Verificando se contagemNomes já possui uma chave com o nome atual
+                    if(novoIndice == null){ //Caso esteja vazio, significa que não existe o nome
+                        this.contagemNomes.put(pilotos.getName(), new DadosNome(pilotos.getID())); //É adicionado a classe contagemNomes, o novo nome
                     }
-                    else {
-                        contagemNomes.put(pilotos.getName(), 1); //Se for a primeira vez que o nome é inserido, sua incidencia será 1
+                    else{
+                        novoIndice.addLocalID(pilotos.getID()); //Caso já exista, será incrementado seu valor de incidencia e adicionado o ID ao Array
                     }
                 }   
                 else{
@@ -67,33 +74,44 @@ public class listaInvertida {
             System.out.println("Houve um erro ao tentar abrir o arquivo driversDB:");
             e.printStackTrace();
         } 
-        System.out.println("Lista criada com sucesso!\n");
     }
 
+    /**
+     * Método que cria um arquivo txt para leitura.
+     * 
+     * <p>O criarArquivoLista() faz a leitura e ordenação do Map atual, e escreve todos os valores lidos dentro de um arquivo TXT
+     * de forma organizada e ordenada.
+     */
     void criarArquivoLista(){
         //Verificando se o Map de Lista foi criado
-        if (contagemNomes.size() == 0){
-            System.out.println("Crie uma lista invertida antes de criar um arquivo!");
+        if (this.contagemNomes.size() == 0){ //Verificando se o arquivo existe
+            criarListaNome();
         }
-        else{
-            try {
-                FileWriter Writer = new FileWriter("src/data/ListaInvertida.txt");
-                Map<String, Integer> mapaOrdenado = ordenaMap(contagemNomes);
-                for(Map.Entry<String, Integer> entry : mapaOrdenado.entrySet()){
-                    String nome = entry.getKey();
-                    int qnt = entry.getValue();
-                    Writer.write(nome);
-                    Writer.write(": x");
-                    Writer.write(qnt + "\n");
-                }
-                System.out.println("Arquivo criado com sucesso.");
-                Writer.close();
-            } 
-            catch (Exception e) {
-                System.out.println("Houve um erro ao tentar criar o arquivo:");
-                e.printStackTrace();
-            }
+        try {
+            FileWriter Writer = new FileWriter("src/data/ListaInvertida.txt"); //Abrindo escritor de arquivo
+            List<Map.Entry<String, DadosNome>> mapaOrdenado = ordenaMap(contagemNomes); //Ordenando Map para a leitura
             
+            //Realizando a iteração pelo Map para pegar todos seus valores
+            for(Map.Entry<String, DadosNome> valor : mapaOrdenado) {
+                String nome = valor.getKey(); //Recebendo nome
+                int incidencia = valor.getValue().incidencia; //Recebendo incidencia
+                List<Integer> IDs = valor.getValue().localID; //Recebendo o array de IDs
+                
+                //Escrevendo os valores no documento
+                Writer.write("Nome: " + nome);
+                Writer.write(" -> Incidencia: " + incidencia);
+                Writer.write(" | IDs:{");
+                for(int id : IDs){
+                    Writer.write(id + ",");
+                }
+                Writer.write("}\n"); //Finalizando Nome atual e quebrando linha
+            }
+            System.out.println("Arquivo criado com sucesso.");
+            Writer.close();
+        } 
+        catch (Exception e) {
+            System.out.println("Houve um erro ao tentar criar o arquivo:");
+            e.printStackTrace();
         }
     }
 
@@ -103,32 +121,72 @@ public class listaInvertida {
      */
     void imprimirListaInvertida() {
         //Verificando se o Map foi carregado com
-        if (contagemNomes.size() == 0) {
-            System.out.println("Crie uma lista invertida antes de imprimir!");
+        if (this.contagemNomes.size() == 0){ //Verificando se o arquivo existe
+            criarListaNome();
+        }
+        //Chamando a ordenação do Map
+        List<Map.Entry<String, DadosNome>> mapaOrdenado = ordenaMap(contagemNomes);
+
+        //Impressão das String ordenadas
+        for (Map.Entry<String, DadosNome> valor : mapaOrdenado) {
+            System.out.println("Nome: " + valor.getKey() + ", Incidencia: " + valor.getValue().incidencia + ", ID(s) do Nome: " + valor.getValue().localID);
+        }
+    }
+
+    /**
+     * Algoritmo para realizar a ordenação em memória primária de um HashMap
+     * 
+     * <p>Esse algoritmo ordena, em memória primária, um Map de Lista Invertida Retirando todo seu conteúdo e jogando
+     * para um ArrayList, onde é usado a função sort junto de um Comparator para realizar a ordenação.
+     * <p>O valor comparado dentro do Map é o int incidencia, que conta quantas vezes X nome apareceu.
+     * 
+     * @param desordenado - Map pré ordenação
+     * @return <b>ordenado</b> - Map após ordenação
+     * @see DadosNome
+     */
+    List<Map.Entry<String, DadosNome>> ordenaMap(Map<String, DadosNome> desordenado) {
+
+        /*
+         * Sobre a ordenação:
+         * Todos os valores do HashMap são copiados e inseridos dentro de uma ArrayList pois dentro do mesmo existe
+         * o comando sort(). No sort é utilizado um Comparator para comparar o valor atual do Map com o ArrayList
+         */
+        List<Map.Entry<String, DadosNome>> ordenado = new ArrayList<>(this.contagemNomes.entrySet());
+        ordenado.sort(Map.Entry.comparingByValue(Comparator.comparingInt(x -> x.incidencia)));
+
+        return ordenado;
+    }
+
+    
+    /**
+     * Algoritmo para realizar a leitura de todos os nós com X nome
+     * 
+     * <p>Esse algoritmo recebe um nome X determinado pelo usuario e realizar uma busca na Lista Invertida para verificar
+     * se possui resultados. Caso tenha ele pegará todos os IDs que possuem o nome X e mostrará, no console, o nome completo
+     * do piloto junto de seu ID
+     * 
+     * @param nome a ser pesquisado
+     * @param Index com a lista de Indice
+     * @param crud com a função de leitura
+     */
+    void pesquisaIndice(String nome, chaveIndice Index, CRUD crud) {
+        if (this.contagemNomes.size() == 0){ //Verificando se o arquivo existe
+            criarListaNome();
+        }
+        if(!this.contagemNomes.containsKey(nome)){ //Procurando pelo nome recebido
+            System.out.println("Nome não encontrado nos valores...");
+        }
+        else { //Imprimindo caso o nome exista
+            DadosNome busca = this.contagemNomes.get(nome); //Recuperando os dados do nome da Lista
+
+            for(int id : busca.localID){ //Iterando por todos os IDs do nome
+                long buscaPreview = Index.buscarIndex(id); //Buscando o ID digitado no Indice
+                if(crud.readWithIndex(id, buscaPreview)) { //Verificando se existe o ID (que no caso DEVE existir mas nunca se sabe)
+                    crud.pilotos.printPreview();
+                }
+            }
             
         }
-        else{
-            Map<String, Integer> mapaOrdenado = ordenaMap(contagemNomes);
-
-            //Impressão das String ordenadas
-            System.out.println("Incidencia dos nomes:");
-            for(Map.Entry<String, Integer> entry : mapaOrdenado.entrySet()){
-                System.out.println(entry.getKey() + ": " + entry.getValue());
-            }
-        }
     }
-
-    Map<String, Integer> ordenaMap(Map<String, Integer> desordenado) {
-        Map<String, Integer> mapaOrdenado = desordenado.entrySet().stream() // Criando uma Stream das entradas do mapa
-            .sorted(Map.Entry.comparingByValue()) // Ordena as entradas do Stream comparando ao Map.Entry
-            .collect(Collectors.toMap( // Coleta os resultados da ordenação em um OUTRO Map
-                Map.Entry::getKey, // Obtendo a String
-                Map.Entry::getValue, // Obtendo o int
-                (oldValue, newValue) -> oldValue, // Resolução de qualquer conflito caso apareçam chaves iguais
-                LinkedHashMap::new)); // Criação do novo Map para o recebimento da Stream ordenada
-
-        return mapaOrdenado;
-    }
-
 }
     

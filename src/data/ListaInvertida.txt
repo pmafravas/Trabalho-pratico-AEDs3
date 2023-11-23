@@ -1,475 +1,475 @@
-Heikki: x1
-Menato: x1
-Elio: x1
-Vincenzo: x1
-Shorty: x1
-Didier: x1
-Jacky: x1
-Reine: x1
-Miguel Ángel: x1
-Bayliss: x1
-Hector: x1
-Daniel: x1
-Nicola: x1
-Piercarlo: x1
-Emerson: x1
-Ralf: x1
-Massimiliano: x1
-Jean-Louis: x1
-Wayne: x1
-Gunnar: x1
-Piers: x1
-Silvio: x1
-Renzo: x1
-Elmer: x1
-Clive: x1
-Dempsey: x1
-Pierluigi: x1
-Huub: x1
-Jud: x1
-Niki: x1
-Doug: x1
-Gerry: x1
-Ukyo: x1
-Ben: x1
-Takuma: x1
-Tarso: x1
-Red: x1
-Duane: x1
-Reg: x1
-Keke: x1
-Fernando: x1
-Sergey: x1
-Yves: x1
-Jules: x1
-Josef: x1
-Taki: x1
-Kenneth: x1
-Perry: x1
-Joachim: x1
-Jody: x1
-Cesare: x1
-Dries: x1
-Oswald: x1
-Aguri: x1
-Rodney: x1
-Rubens: x1
-Carel Godin: x1
-Rolf: x1
-Marcus: x1
-Luis: x1
-Juan Manuel: x1
-Jarno: x1
-Luiz: x1
-Ed: x1
-Adolf: x1
-Ingo: x1
-Gianmaria: x1
-Clemente: x1
-José Froilán: x1
-Paddy: x1
-Eppie: x1
-Brett: x1
-Luki: x1
-Harald: x1
-Howden: x1
-Toulo: x1
-Manny: x1
-Myron: x1
-Damien: x1
-Beppe: x1
-Timmy: x1
-Maurice: x1
-Lucien: x1
-Rio: x1
-Loris: x1
-Raul: x1
-Hubert: x1
-Jorge: x1
-Stéphane: x1
-Gilles: x1
-Zsolt: x1
-Alberto Rodriguez: x1
-Karun: x1
-Pablo: x1
-Gus: x1
-Arturo: x1
-Enrico: x1
-Troy: x1
-Mack: x1
-Gaetano: x1
-Gabriele: x1
-Narain: x1
-Élie: x1
-Gastón: x1
-Corrado: x1
-Rupert: x1
-Conny: x1
-Hans-Joachim: x1
-Yuji: x1
-Horace: x1
-Ludovico: x1
-Hermann: x1
-Bernie: x1
-Joie: x1
-Vern: x1
-James: x1
-Massimo: x1
-Jérôme: x1
-Alfredo: x1
-Giovanna: x1
-Archie: x1
-Lorenzo: x1
-Lamberto: x1
-Slim: x1
-Yannick: x1
-Tomáš: x1
-Heini: x1
-Denny: x1
-Stefano: x1
-Azdrubal: x1
-Cristiano: x1
-Stirling: x1
-Pierre-Henri: x1
-Albert: x1
-Heinz: x1
-Moisés: x1
-Gianfranco: x1
-Nicholas: x1
-Ignazio: x1
-Boy: x1
-Ron: x1
-Yuki: x1
-Bernd: x1
-Herbert: x1
-Norberto: x1
-Gianni: x1
-Skip: x1
-Roy: x1
-Vittorio: x1
-Dieter: x1
-Desmond: x1
-Nello: x1
-Kazuki: x1
-Jyrki: x1
-Volker: x1
-Philip: x1
-Guanyu: x1
-Kazuyoshi: x1
-Rikky: x1
-Onofre: x1
-Christijan: x1
-Wilson: x1
-Lucas: x1
-Gijs: x1
-Jac: x1
-Lee: x1
-Renato: x1
-Leo: x1
-Les: x1
-Jay: x1
-Ralph: x1
-Óscar: x1
-Aldo: x1
-Domenico: x1
-Gregor: x1
-Innes: x1
-Rudi: x1
-Siegfried: x1
-Paolo: x1
-Luciano: x1
-Ivan: x1
-Paco: x1
-Antônio: x1
-Allen: x1
-Brendon: x1
-Ayrton: x1
-Tiff: x1
-Logan: x1
-Jenson: x1
-Eugenio: x1
-Enrique: x1
-Willy: x1
-Marco: x1
-Edgar: x1
-Satoru: x1
-Adrián: x1
-Toranosuke: x1
-Willi: x1
-Nicolas: x1
-Bud: x1
-Desiré: x1
-Thomas: x1
-Nasif: x1
-Ottorino: x1
-Carroll: x1
-Rodger: x1
-Hap: x1
-Travis: x1
-Lloyd: x1
-Duncan: x1
-Scott: x1
-Tiago: x1
-Adolfo: x1
-Masten: x1
-Tommy: x1
-Mario: x1
-Hideki: x1
-Shinji: x1
-Clemar: x1
-Stoffel: x1
-Syd: x1
-Clay: x1
-Roelof: x1
-Jean-Denis: x1
-Damon: x1
-Cuth: x1
-Allan: x1
-Noritake: x1
-Kenny: x1
-Vitaly: x1
-Helmuth: x1
-Markus: x1
-Masahiro: x1
-Maria: x1
-Marcel: x1
-Hiroshi: x1
-Pietro: x1
-Julian: x1
-Vitantonio: x1
-Kamui: x1
-Felice: x1
-Timo: x1
-Michel: x1
-José: x1
-Giulio: x1
-Gerino: x1
-Cecil: x1
-Billy: x1
-Sakon: x1
-Jean-Éric: x1
-Neville: x1
-Lella: x1
-Claudio: x1
-Richie: x1
-Sebastian: x1
-Stephen: x1
-Toshio: x1
-Mick: x1
-Teddy: x1
-Consalvo: x1
-Gérard: x1
-Naoki: x1
-Eitel: x1
-Dorino: x1
-Jaime: x1
-Mauri: x1
-Mauro: x1
-Kunimitsu: x1
-Pete: x1
-Otto: x1
-Mário de Araújo: x1
-Ettore: x1
-Dan: x1
-Thierry: x1
-Jesús: x1
-Giedo: x1
-Eliseo: x1
-Fabrizio: x1
-Jolyon: x1
-Brausch: x1
-Pastor: x1
-Bertrand: x1
-Jean-Christophe: x1
-Nanni: x1
-Prince: x1
-Umberto: x1
-Lando: x1
-Manfred: x1
-Giacomo: x1
-Nick: x1
-Romain: x1
-Marshall: x1
-Bertil: x1
-Jos: x1
-Cal: x1
-Daniil: x1
-Nyck: x1
-Kimi: x1
-Mikko: x1
-Valtteri: x1
-Warwick: x1
-Divina: x1
-Raymond: x1
-Adrian: x1
-Michele: x1
-Ivor: x1
-Chet: x1
-Basil: x1
-Will: x1
-Heinz-Harald: x1
-Justin: x1
-Maurício: x1
-Luca: x1
-Jean-Marc: x1
-René: x1
-Erwin: x1
-Nigel: x1
-Torsten: x1
-Ted: x1
-Roland: x1
-Stuart: x1
-Lewis: x1
-Érik: x1
-Éric: x1
-Teo: x1
-Hernando: x1
-Ray: x2
-Chico: x2
-Kevin: x2
-Mika: x2
-Trevor: x2
-Fritz: x2
-Tim: x2
-Pat: x2
-Ronnie: x2
-Felipe: x2
-Keith: x2
-Gerhard: x2
-Henri: x2
-Larry: x2
-Henry: x2
-Gary: x2
-Alfonso: x2
-Sergio: x2
-Nino: x2
-Johnnie: x2
-Phil: x2
-Nelson: x2
-Robin: x2
-Antonio: x2
-Bruno: x2
-Richard: x2
-Colin: x2
-Giovanni: x2
-Rob: x2
-Franck: x2
-Toni: x2
-Andy: x2
-Emilio: x2
-Duke: x2
-Len: x2
-Emanuele: x2
-Karl: x2
-Theo: x2
-Pascal: x2
-Jochen: x2
-Cliff: x2
-Bernard: x2
-Art: x2
-Gino: x2
-Sébastien: x2
-Martin: x2
-Arthur: x2
-Harry: x2
-Rudolf: x2
-Stefan: x2
-Jerry: x2
-Ernesto: x2
-Marc: x2
-Dennis: x2
-Georges: x2
-Alain: x2
-Helmut: x2
-Riccardo: x2
-Wolfgang: x2
-Gene: x2
-Carl: x2
-Günther: x2
-Pierre: x2
-Jonathan: x2
-Ernst: x2
-Nico: x2
-Louis: x2
-Eugène: x2
-Giancarlo: x2
-Anthony: x2
-Dick: x2
-Vic: x2
-Dave: x3
-Al: x3
-Alexander: x3
-Leslie: x3
-Jean-Pierre: x3
-Kurt: x3
-Frank: x3
-Graham: x3
-Franco: x3
-Jan: x3
-Ernie: x3
-Eric: x3
-Fred: x3
-Mark: x3
-Juan: x3
-Danny: x3
-Esteban: x3
-Joe: x3
-Geoff: x3
-Derek: x3
-Sam: x3
-Lance: x3
-Oscar: x3
-Carlo: x3
-Philippe: x4
-Carlos: x4
-Don: x4
-Guy: x4
-Tom: x4
-Max: x4
-Alberto: x4
-Charles: x4
-Alessandro: x4
-Walt: x4
-Christian: x4
-Giorgio: x4
-Andrea: x4
-Jean: x4
-Bruce: x4
-Chuck: x4
-Roger: x4
-Bobby: x4
-Olivier: x4
-Jacques: x5
-Michael: x5
-Piero: x5
-Luigi: x5
-Hans: x5
-Jo: x5
-Chris: x5
-Alan: x5
-Ricardo: x5
-Alex: x5
-Ken: x5
-Ian: x5
-Jackie: x5
-François: x5
-Robert: x5
-Jack: x5
-Patrick: x5
-Pedro: x5
-Eddie: x6
-Jimmy: x6
-André: x6
-Brian: x7
-Jim: x7
-Roberto: x7
-George: x8
-Paul: x9
-Johnny: x9
-Bob: x10
-David: x10
-Bill: x11
-Tony: x11
-Peter: x13
-Mike: x14
-John: x14
+Nome: Heikki -> Incidencia: 1 | IDs:{5,}
+Nome: Menato -> Incidencia: 1 | IDs:{492,}
+Nome: Elio -> Incidencia: 1 | IDs:{173,}
+Nome: Vincenzo -> Incidencia: 1 | IDs:{80,}
+Nome: Shorty -> Incidencia: 1 | IDs:{523,}
+Nome: Didier -> Incidencia: 1 | IDs:{202,}
+Nome: Jacky -> Incidencia: 1 | IDs:{235,}
+Nome: Reine -> Incidencia: 1 | IDs:{317,}
+Nome: Miguel Ángel -> Incidencia: 1 | IDs:{215,}
+Nome: Bayliss -> Incidencia: 1 | IDs:{798,}
+Nome: Hector -> Incidencia: 1 | IDs:{212,}
+Nome: Daniel -> Incidencia: 1 | IDs:{816,}
+Nome: Nicola -> Incidencia: 1 | IDs:{78,}
+Nome: Piercarlo -> Incidencia: 1 | IDs:{160,}
+Nome: Emerson -> Incidencia: 1 | IDs:{224,}
+Nome: Ralf -> Incidencia: 1 | IDs:{23,}
+Nome: Massimiliano -> Incidencia: 1 | IDs:{97,}
+Nome: Jean-Louis -> Incidencia: 1 | IDs:{168,}
+Nome: Wayne -> Incidencia: 1 | IDs:{530,}
+Nome: Gunnar -> Incidencia: 1 | IDs:{255,}
+Nome: Piers -> Incidencia: 1 | IDs:{361,}
+Nome: Silvio -> Incidencia: 1 | IDs:{351,}
+Nome: Renzo -> Incidencia: 1 | IDs:{254,}
+Nome: Elmer -> Incidencia: 1 | IDs:{616,}
+Nome: Clive -> Incidencia: 1 | IDs:{414,}
+Nome: Dempsey -> Incidencia: 1 | IDs:{539,}
+Nome: Pierluigi -> Incidencia: 1 | IDs:{94,}
+Nome: Huub -> Incidencia: 1 | IDs:{179,}
+Nome: Jud -> Incidencia: 1 | IDs:{564,}
+Nome: Niki -> Incidencia: 1 | IDs:{182,}
+Nome: Doug -> Incidencia: 1 | IDs:{411,}
+Nome: Gerry -> Incidencia: 1 | IDs:{460,}
+Nome: Ukyo -> Incidencia: 1 | IDs:{79,}
+Nome: Ben -> Incidencia: 1 | IDs:{457,}
+Nome: Takuma -> Incidencia: 1 | IDs:{11,}
+Nome: Tarso -> Incidencia: 1 | IDs:{58,}
+Nome: Red -> Incidencia: 1 | IDs:{517,}
+Nome: Duane -> Incidencia: 1 | IDs:{518,}
+Nome: Reg -> Incidencia: 1 | IDs:{686,}
+Nome: Keke -> Incidencia: 1 | IDs:{177,}
+Nome: Fernando -> Incidencia: 1 | IDs:{4,}
+Nome: Sergey -> Incidencia: 1 | IDs:{844,}
+Nome: Yves -> Incidencia: 1 | IDs:{704,}
+Nome: Jules -> Incidencia: 1 | IDs:{823,}
+Nome: Josef -> Incidencia: 1 | IDs:{757,}
+Nome: Taki -> Incidencia: 1 | IDs:{89,}
+Nome: Kenneth -> Incidencia: 1 | IDs:{664,}
+Nome: Perry -> Incidencia: 1 | IDs:{135,}
+Nome: Joachim -> Incidencia: 1 | IDs:{164,}
+Nome: Jody -> Incidencia: 1 | IDs:{222,}
+Nome: Cesare -> Incidencia: 1 | IDs:{607,}
+Nome: Dries -> Incidencia: 1 | IDs:{758,}
+Nome: Oswald -> Incidencia: 1 | IDs:{711,}
+Nome: Aguri -> Incidencia: 1 | IDs:{88,}
+Nome: Rodney -> Incidencia: 1 | IDs:{690,}
+Nome: Rubens -> Incidencia: 1 | IDs:{22,}
+Nome: Carel Godin -> Incidencia: 1 | IDs:{430,}
+Nome: Rolf -> Incidencia: 1 | IDs:{243,}
+Nome: Marcus -> Incidencia: 1 | IDs:{827,}
+Nome: Luis -> Incidencia: 1 | IDs:{159,}
+Nome: Juan Manuel -> Incidencia: 1 | IDs:{485,}
+Nome: Jarno -> Incidencia: 1 | IDs:{15,}
+Nome: Luiz -> Incidencia: 1 | IDs:{331,}
+Nome: Ed -> Incidencia: 1 | IDs:{596,}
+Nome: Adolf -> Incidencia: 1 | IDs:{750,}
+Nome: Ingo -> Incidencia: 1 | IDs:{253,}
+Nome: Gianmaria -> Incidencia: 1 | IDs:{46,}
+Nome: Clemente -> Incidencia: 1 | IDs:{791,}
+Nome: José Froilán -> Incidencia: 1 | IDs:{498,}
+Nome: Paddy -> Incidencia: 1 | IDs:{310,}
+Nome: Eppie -> Incidencia: 1 | IDs:{326,}
+Nome: Brett -> Incidencia: 1 | IDs:{239,}
+Nome: Luki -> Incidencia: 1 | IDs:{384,}
+Nome: Harald -> Incidencia: 1 | IDs:{229,}
+Nome: Howden -> Incidencia: 1 | IDs:{307,}
+Nome: Toulo -> Incidencia: 1 | IDs:{640,}
+Nome: Manny -> Incidencia: 1 | IDs:{675,}
+Nome: Myron -> Incidencia: 1 | IDs:{795,}
+Nome: Damien -> Incidencia: 1 | IDs:{282,}
+Nome: Beppe -> Incidencia: 1 | IDs:{213,}
+Nome: Timmy -> Incidencia: 1 | IDs:{470,}
+Nome: Maurice -> Incidencia: 1 | IDs:{427,}
+Nome: Lucien -> Incidencia: 1 | IDs:{376,}
+Nome: Rio -> Incidencia: 1 | IDs:{836,}
+Nome: Loris -> Incidencia: 1 | IDs:{271,}
+Nome: Raul -> Incidencia: 1 | IDs:{196,}
+Nome: Hubert -> Incidencia: 1 | IDs:{365,}
+Nome: Jorge -> Incidencia: 1 | IDs:{672,}
+Nome: Stéphane -> Incidencia: 1 | IDs:{72,}
+Nome: Gilles -> Incidencia: 1 | IDs:{203,}
+Nome: Zsolt -> Incidencia: 1 | IDs:{47,}
+Nome: Alberto Rodriguez -> Incidencia: 1 | IDs:{497,}
+Nome: Karun -> Incidencia: 1 | IDs:{811,}
+Nome: Pablo -> Incidencia: 1 | IDs:{649,}
+Nome: Gus -> Incidencia: 1 | IDs:{366,}
+Nome: Arturo -> Incidencia: 1 | IDs:{232,}
+Nome: Enrico -> Incidencia: 1 | IDs:{134,}
+Nome: Troy -> Incidencia: 1 | IDs:{526,}
+Nome: Mack -> Incidencia: 1 | IDs:{772,}
+Nome: Gaetano -> Incidencia: 1 | IDs:{447,}
+Nome: Gabriele -> Incidencia: 1 | IDs:{99,}
+Nome: Narain -> Incidencia: 1 | IDs:{39,}
+Nome: Élie -> Incidencia: 1 | IDs:{625,}
+Nome: Gastón -> Incidencia: 1 | IDs:{60,}
+Nome: Corrado -> Incidencia: 1 | IDs:{190,}
+Nome: Rupert -> Incidencia: 1 | IDs:{211,}
+Nome: Conny -> Incidencia: 1 | IDs:{260,}
+Nome: Hans-Joachim -> Incidencia: 1 | IDs:{233,}
+Nome: Yuji -> Incidencia: 1 | IDs:{34,}
+Nome: Horace -> Incidencia: 1 | IDs:{547,}
+Nome: Ludovico -> Incidencia: 1 | IDs:{375,}
+Nome: Hermann -> Incidencia: 1 | IDs:{691,}
+Nome: Bernie -> Incidencia: 1 | IDs:{587,}
+Nome: Joie -> Incidencia: 1 | IDs:{794,}
+Nome: Vern -> Incidencia: 1 | IDs:{267,}
+Nome: James -> Incidencia: 1 | IDs:{231,}
+Nome: Massimo -> Incidencia: 1 | IDs:{487,}
+Nome: Jérôme -> Incidencia: 1 | IDs:{815,}
+Nome: Alfredo -> Incidencia: 1 | IDs:{792,}
+Nome: Giovanna -> Incidencia: 1 | IDs:{132,}
+Nome: Archie -> Incidencia: 1 | IDs:{637,}
+Nome: Lorenzo -> Incidencia: 1 | IDs:{385,}
+Nome: Lamberto -> Incidencia: 1 | IDs:{241,}
+Nome: Slim -> Incidencia: 1 | IDs:{201,}
+Nome: Yannick -> Incidencia: 1 | IDs:{114,}
+Nome: Tomáš -> Incidencia: 1 | IDs:{61,}
+Nome: Heini -> Incidencia: 1 | IDs:{466,}
+Nome: Denny -> Incidencia: 1 | IDs:{304,}
+Nome: Stefano -> Incidencia: 1 | IDs:{131,}
+Nome: Azdrubal -> Incidencia: 1 | IDs:{568,}
+Nome: Cristiano -> Incidencia: 1 | IDs:{43,}
+Nome: Stirling -> Incidencia: 1 | IDs:{475,}
+Nome: Pierre-Henri -> Incidencia: 1 | IDs:{162,}
+Nome: Albert -> Incidencia: 1 | IDs:{719,}
+Nome: Heinz -> Incidencia: 1 | IDs:{461,}
+Nome: Moisés -> Incidencia: 1 | IDs:{382,}
+Nome: Gianfranco -> Incidencia: 1 | IDs:{234,}
+Nome: Nicholas -> Incidencia: 1 | IDs:{848,}
+Nome: Ignazio -> Incidencia: 1 | IDs:{363,}
+Nome: Boy -> Incidencia: 1 | IDs:{257,}
+Nome: Ron -> Incidencia: 1 | IDs:{541,}
+Nome: Yuki -> Incidencia: 1 | IDs:{851,}
+Nome: Bernd -> Incidencia: 1 | IDs:{146,}
+Nome: Herbert -> Incidencia: 1 | IDs:{618,}
+Nome: Norberto -> Incidencia: 1 | IDs:{82,}
+Nome: Gianni -> Incidencia: 1 | IDs:{81,}
+Nome: Skip -> Incidencia: 1 | IDs:{342,}
+Nome: Roy -> Incidencia: 1 | IDs:{456,}
+Nome: Vittorio -> Incidencia: 1 | IDs:{230,}
+Nome: Dieter -> Incidencia: 1 | IDs:{323,}
+Nome: Desmond -> Incidencia: 1 | IDs:{636,}
+Nome: Nello -> Incidencia: 1 | IDs:{800,}
+Nome: Kazuki -> Incidencia: 1 | IDs:{6,}
+Nome: Jyrki -> Incidencia: 1 | IDs:{109,}
+Nome: Volker -> Incidencia: 1 | IDs:{161,}
+Nome: Philip -> Incidencia: 1 | IDs:{777,}
+Nome: Guanyu -> Incidencia: 1 | IDs:{854,}
+Nome: Kazuyoshi -> Incidencia: 1 | IDs:{273,}
+Nome: Rikky -> Incidencia: 1 | IDs:{313,}
+Nome: Onofre -> Incidencia: 1 | IDs:{670,}
+Nome: Christijan -> Incidencia: 1 | IDs:{27,}
+Nome: Wilson -> Incidencia: 1 | IDs:{290,}
+Nome: Lucas -> Incidencia: 1 | IDs:{809,}
+Nome: Gijs -> Incidencia: 1 | IDs:{298,}
+Nome: Jac -> Incidencia: 1 | IDs:{281,}
+Nome: Lee -> Incidencia: 1 | IDs:{766,}
+Nome: Renato -> Incidencia: 1 | IDs:{489,}
+Nome: Leo -> Incidencia: 1 | IDs:{316,}
+Nome: Les -> Incidencia: 1 | IDs:{610,}
+Nome: Jay -> Incidencia: 1 | IDs:{463,}
+Nome: Ralph -> Incidencia: 1 | IDs:{52,}
+Nome: Óscar -> Incidencia: 1 | IDs:{806,}
+Nome: Aldo -> Incidencia: 1 | IDs:{775,}
+Nome: Domenico -> Incidencia: 1 | IDs:{93,}
+Nome: Gregor -> Incidencia: 1 | IDs:{148,}
+Nome: Innes -> Incidencia: 1 | IDs:{404,}
+Nome: Rudi -> Incidencia: 1 | IDs:{723,}
+Nome: Siegfried -> Incidencia: 1 | IDs:{216,}
+Nome: Paolo -> Incidencia: 1 | IDs:{147,}
+Nome: Luciano -> Incidencia: 1 | IDs:{54,}
+Nome: Ivan -> Incidencia: 1 | IDs:{122,}
+Nome: Paco -> Incidencia: 1 | IDs:{580,}
+Nome: Antônio -> Incidencia: 1 | IDs:{42,}
+Nome: Allen -> Incidencia: 1 | IDs:{180,}
+Nome: Brendon -> Incidencia: 1 | IDs:{842,}
+Nome: Ayrton -> Incidencia: 1 | IDs:{102,}
+Nome: Tiff -> Incidencia: 1 | IDs:{227,}
+Nome: Logan -> Incidencia: 1 | IDs:{857,}
+Nome: Jenson -> Incidencia: 1 | IDs:{18,}
+Nome: Eugenio -> Incidencia: 1 | IDs:{608,}
+Nome: Enrique -> Incidencia: 1 | IDs:{59,}
+Nome: Willy -> Incidencia: 1 | IDs:{435,}
+Nome: Marco -> Incidencia: 1 | IDs:{124,}
+Nome: Edgar -> Incidencia: 1 | IDs:{431,}
+Nome: Satoru -> Incidencia: 1 | IDs:{138,}
+Nome: Adrián -> Incidencia: 1 | IDs:{167,}
+Nome: Toranosuke -> Incidencia: 1 | IDs:{68,}
+Nome: Willi -> Incidencia: 1 | IDs:{712,}
+Nome: Nicolas -> Incidencia: 1 | IDs:{53,}
+Nome: Bud -> Incidencia: 1 | IDs:{515,}
+Nome: Desiré -> Incidencia: 1 | IDs:{228,}
+Nome: Thomas -> Incidencia: 1 | IDs:{452,}
+Nome: Nasif -> Incidencia: 1 | IDs:{439,}
+Nome: Ottorino -> Incidencia: 1 | IDs:{638,}
+Nome: Carroll -> Incidencia: 1 | IDs:{566,}
+Nome: Rodger -> Incidencia: 1 | IDs:{449,}
+Nome: Hap -> Incidencia: 1 | IDs:{434,}
+Nome: Travis -> Incidencia: 1 | IDs:{677,}
+Nome: Lloyd -> Incidencia: 1 | IDs:{494,}
+Nome: Duncan -> Incidencia: 1 | IDs:{708,}
+Nome: Scott -> Incidencia: 1 | IDs:{26,}
+Nome: Tiago -> Incidencia: 1 | IDs:{33,}
+Nome: Adolfo -> Incidencia: 1 | IDs:{698,}
+Nome: Masten -> Incidencia: 1 | IDs:{418,}
+Nome: Tommy -> Incidencia: 1 | IDs:{210,}
+Nome: Mario -> Incidencia: 1 | IDs:{207,}
+Nome: Hideki -> Incidencia: 1 | IDs:{115,}
+Nome: Shinji -> Incidencia: 1 | IDs:{75,}
+Nome: Clemar -> Incidencia: 1 | IDs:{645,}
+Nome: Stoffel -> Incidencia: 1 | IDs:{837,}
+Nome: Syd -> Incidencia: 1 | IDs:{474,}
+Nome: Clay -> Incidencia: 1 | IDs:{223,}
+Nome: Roelof -> Incidencia: 1 | IDs:{295,}
+Nome: Jean-Denis -> Incidencia: 1 | IDs:{98,}
+Nome: Damon -> Incidencia: 1 | IDs:{71,}
+Nome: Cuth -> Incidencia: 1 | IDs:{787,}
+Nome: Allan -> Incidencia: 1 | IDs:{66,}
+Nome: Noritake -> Incidencia: 1 | IDs:{274,}
+Nome: Kenny -> Incidencia: 1 | IDs:{186,}
+Nome: Vitaly -> Incidencia: 1 | IDs:{808,}
+Nome: Helmuth -> Incidencia: 1 | IDs:{324,}
+Nome: Markus -> Incidencia: 1 | IDs:{28,}
+Nome: Masahiro -> Incidencia: 1 | IDs:{287,}
+Nome: Maria -> Incidencia: 1 | IDs:{551,}
+Nome: Marcel -> Incidencia: 1 | IDs:{754,}
+Nome: Hiroshi -> Incidencia: 1 | IDs:{299,}
+Nome: Pietro -> Incidencia: 1 | IDs:{849,}
+Nome: Julian -> Incidencia: 1 | IDs:{141,}
+Nome: Vitantonio -> Incidencia: 1 | IDs:{24,}
+Nome: Kamui -> Incidencia: 1 | IDs:{155,}
+Nome: Felice -> Incidencia: 1 | IDs:{697,}
+Nome: Timo -> Incidencia: 1 | IDs:{10,}
+Nome: Michel -> Incidencia: 1 | IDs:{277,}
+Nome: José -> Incidencia: 1 | IDs:{319,}
+Nome: Giulio -> Incidencia: 1 | IDs:{543,}
+Nome: Gerino -> Incidencia: 1 | IDs:{583,}
+Nome: Cecil -> Incidencia: 1 | IDs:{770,}
+Nome: Billy -> Incidencia: 1 | IDs:{595,}
+Nome: Sakon -> Incidencia: 1 | IDs:{29,}
+Nome: Jean-Éric -> Incidencia: 1 | IDs:{817,}
+Nome: Neville -> Incidencia: 1 | IDs:{410,}
+Nome: Lella -> Incidencia: 1 | IDs:{275,}
+Nome: Claudio -> Incidencia: 1 | IDs:{149,}
+Nome: Richie -> Incidencia: 1 | IDs:{386,}
+Nome: Sebastian -> Incidencia: 1 | IDs:{20,}
+Nome: Stephen -> Incidencia: 1 | IDs:{226,}
+Nome: Toshio -> Incidencia: 1 | IDs:{126,}
+Nome: Mick -> Incidencia: 1 | IDs:{853,}
+Nome: Teddy -> Incidencia: 1 | IDs:{269,}
+Nome: Consalvo -> Incidencia: 1 | IDs:{763,}
+Nome: Gérard -> Incidencia: 1 | IDs:{315,}
+Nome: Naoki -> Incidencia: 1 | IDs:{144,}
+Nome: Eitel -> Incidencia: 1 | IDs:{748,}
+Nome: Dorino -> Incidencia: 1 | IDs:{802,}
+Nome: Jaime -> Incidencia: 1 | IDs:{153,}
+Nome: Mauri -> Incidencia: 1 | IDs:{768,}
+Nome: Mauro -> Incidencia: 1 | IDs:{184,}
+Nome: Kunimitsu -> Incidencia: 1 | IDs:{272,}
+Nome: Pete -> Incidencia: 1 | IDs:{353,}
+Nome: Otto -> Incidencia: 1 | IDs:{285,}
+Nome: Mário de Araújo -> Incidencia: 1 | IDs:{432,}
+Nome: Ettore -> Incidencia: 1 | IDs:{503,}
+Nome: Dan -> Incidencia: 1 | IDs:{364,}
+Nome: Thierry -> Incidencia: 1 | IDs:{123,}
+Nome: Jesús -> Incidencia: 1 | IDs:{646,}
+Nome: Giedo -> Incidencia: 1 | IDs:{822,}
+Nome: Eliseo -> Incidencia: 1 | IDs:{194,}
+Nome: Fabrizio -> Incidencia: 1 | IDs:{120,}
+Nome: Jolyon -> Incidencia: 1 | IDs:{834,}
+Nome: Brausch -> Incidencia: 1 | IDs:{412,}
+Nome: Pastor -> Incidencia: 1 | IDs:{812,}
+Nome: Bertrand -> Incidencia: 1 | IDs:{92,}
+Nome: Jean-Christophe -> Incidencia: 1 | IDs:{96,}
+Nome: Nanni -> Incidencia: 1 | IDs:{330,}
+Nome: Prince -> Incidencia: 1 | IDs:{669,}
+Nome: Umberto -> Incidencia: 1 | IDs:{620,}
+Nome: Lando -> Incidencia: 1 | IDs:{845,}
+Nome: Manfred -> Incidencia: 1 | IDs:{181,}
+Nome: Giacomo -> Incidencia: 1 | IDs:{402,}
+Nome: Nick -> Incidencia: 1 | IDs:{2,}
+Nome: Romain -> Incidencia: 1 | IDs:{154,}
+Nome: Marshall -> Incidencia: 1 | IDs:{613,}
+Nome: Bertil -> Incidencia: 1 | IDs:{318,}
+Nome: Jos -> Incidencia: 1 | IDs:{50,}
+Nome: Cal -> Incidencia: 1 | IDs:{655,}
+Nome: Daniil -> Incidencia: 1 | IDs:{825,}
+Nome: Nyck -> Incidencia: 1 | IDs:{855,}
+Nome: Kimi -> Incidencia: 1 | IDs:{8,}
+Nome: Mikko -> Incidencia: 1 | IDs:{263,}
+Nome: Valtteri -> Incidencia: 1 | IDs:{821,}
+Nome: Warwick -> Incidencia: 1 | IDs:{286,}
+Nome: Divina -> Incidencia: 1 | IDs:{242,}
+Nome: Raymond -> Incidencia: 1 | IDs:{793,}
+Nome: Adrian -> Incidencia: 1 | IDs:{16,}
+Nome: Michele -> Incidencia: 1 | IDs:{105,}
+Nome: Ivor -> Incidencia: 1 | IDs:{549,}
+Nome: Chet -> Incidencia: 1 | IDs:{733,}
+Nome: Basil -> Incidencia: 1 | IDs:{369,}
+Nome: Will -> Incidencia: 1 | IDs:{828,}
+Nome: Heinz-Harald -> Incidencia: 1 | IDs:{49,}
+Nome: Justin -> Incidencia: 1 | IDs:{51,}
+Nome: Maurício -> Incidencia: 1 | IDs:{127,}
+Nome: Luca -> Incidencia: 1 | IDs:{69,}
+Nome: Jean-Marc -> Incidencia: 1 | IDs:{111,}
+Nome: René -> Incidencia: 1 | IDs:{163,}
+Nome: Erwin -> Incidencia: 1 | IDs:{716,}
+Nome: Nigel -> Incidencia: 1 | IDs:{95,}
+Nome: Torsten -> Incidencia: 1 | IDs:{297,}
+Nome: Ted -> Incidencia: 1 | IDs:{652,}
+Nome: Roland -> Incidencia: 1 | IDs:{107,}
+Nome: Stuart -> Incidencia: 1 | IDs:{590,}
+Nome: Lewis -> Incidencia: 1 | IDs:{1,}
+Nome: Érik -> Incidencia: 1 | IDs:{100,}
+Nome: Éric -> Incidencia: 1 | IDs:{103,}
+Nome: Teo -> Incidencia: 1 | IDs:{170,}
+Nome: Hernando -> Incidencia: 1 | IDs:{624,}
+Nome: Ray -> Incidencia: 2 | IDs:{415,561,}
+Nome: Chico -> Incidencia: 2 | IDs:{192,622,}
+Nome: Kevin -> Incidencia: 2 | IDs:{214,824,}
+Nome: Mika -> Incidencia: 2 | IDs:{57,63,}
+Nome: Trevor -> Incidencia: 2 | IDs:{401,409,}
+Nome: Fritz -> Incidencia: 2 | IDs:{567,751,}
+Nome: Tim -> Incidencia: 2 | IDs:{314,441,}
+Nome: Pat -> Incidencia: 2 | IDs:{559,597,}
+Nome: Ronnie -> Incidencia: 2 | IDs:{238,405,}
+Nome: Felipe -> Incidencia: 2 | IDs:{13,830,}
+Nome: Keith -> Incidencia: 2 | IDs:{465,631,}
+Nome: Gerhard -> Incidencia: 2 | IDs:{77,423,}
+Nome: Henri -> Incidencia: 2 | IDs:{280,765,}
+Nome: Larry -> Incidencia: 2 | IDs:{256,674,}
+Nome: Henry -> Incidencia: 2 | IDs:{481,731,}
+Nome: Gary -> Incidencia: 2 | IDs:{150,473,}
+Nome: Alfonso -> Incidencia: 2 | IDs:{491,606,}
+Nome: Sergio -> Incidencia: 2 | IDs:{644,814,}
+Nome: Nino -> Incidencia: 2 | IDs:{425,642,}
+Nome: Johnnie -> Incidencia: 2 | IDs:{593,594,}
+Nome: Phil -> Incidencia: 2 | IDs:{403,576,}
+Nome: Nelson -> Incidencia: 2 | IDs:{12,137,}
+Nome: Robin -> Incidencia: 2 | IDs:{378,739,}
+Nome: Antonio -> Incidencia: 2 | IDs:{504,840,}
+Nome: Bruno -> Incidencia: 2 | IDs:{152,810,}
+Nome: Richard -> Incidencia: 2 | IDs:{308,370,}
+Nome: Colin -> Incidencia: 2 | IDs:{462,635,}
+Nome: Giovanni -> Incidencia: 2 | IDs:{86,694,}
+Nome: Rob -> Incidencia: 2 | IDs:{458,469,}
+Nome: Franck -> Incidencia: 2 | IDs:{36,116,}
+Nome: Toni -> Incidencia: 2 | IDs:{724,780,}
+Nome: Andy -> Incidencia: 2 | IDs:{264,612,}
+Nome: Emilio -> Incidencia: 2 | IDs:{208,279,}
+Nome: Duke -> Incidencia: 2 | IDs:{630,699,}
+Nome: Len -> Incidencia: 2 | IDs:{536,678,}
+Nome: Emanuele -> Incidencia: 2 | IDs:{125,139,}
+Nome: Karl -> Incidencia: 2 | IDs:{91,648,}
+Nome: Theo -> Incidencia: 2 | IDs:{692,713,}
+Nome: Pascal -> Incidencia: 2 | IDs:{169,835,}
+Nome: Jochen -> Incidencia: 2 | IDs:{200,358,}
+Nome: Cliff -> Incidencia: 2 | IDs:{477,629,}
+Nome: Bernard -> Incidencia: 2 | IDs:{261,428,}
+Nome: Art -> Incidencia: 2 | IDs:{599,656,}
+Nome: Gino -> Incidencia: 2 | IDs:{500,746,}
+Nome: Sébastien -> Incidencia: 2 | IDs:{7,67,}
+Nome: Martin -> Incidencia: 2 | IDs:{84,151,}
+Nome: Arthur -> Incidencia: 2 | IDs:{546,703,}
+Nome: Harry -> Incidencia: 2 | IDs:{501,572,}
+Nome: Rudolf -> Incidencia: 2 | IDs:{710,755,}
+Nome: Stefan -> Incidencia: 2 | IDs:{140,185,}
+Nome: Jerry -> Incidencia: 2 | IDs:{598,659,}
+Nome: Ernesto -> Incidencia: 2 | IDs:{443,467,}
+Nome: Marc -> Incidencia: 2 | IDs:{48,176,}
+Nome: Dennis -> Incidencia: 2 | IDs:{571,742,}
+Nome: Georges -> Incidencia: 2 | IDs:{681,783,}
+Nome: Alain -> Incidencia: 2 | IDs:{117,550,}
+Nome: Helmut -> Incidencia: 2 | IDs:{337,752,}
+Nome: Riccardo -> Incidencia: 2 | IDs:{119,204,}
+Nome: Wolfgang -> Incidencia: 2 | IDs:{455,476,}
+Nome: Gene -> Incidencia: 2 | IDs:{520,534,}
+Nome: Carl -> Incidencia: 2 | IDs:{700,767,}
+Nome: Günther -> Incidencia: 2 | IDs:{445,715,}
+Nome: Pierre -> Incidencia: 2 | IDs:{773,841,}
+Nome: Jonathan -> Incidencia: 2 | IDs:{156,395,}
+Nome: Ernst -> Incidencia: 2 | IDs:{709,718,}
+Nome: Nico -> Incidencia: 2 | IDs:{3,807,}
+Nome: Louis -> Incidencia: 2 | IDs:{589,627,}
+Nome: Eugène -> Incidencia: 2 | IDs:{774,789,}
+Nome: Giancarlo -> Incidencia: 2 | IDs:{21,394,}
+Nome: Anthony -> Incidencia: 2 | IDs:{19,531,}
+Nome: Dick -> Incidencia: 2 | IDs:{537,601,}
+Nome: Vic -> Incidencia: 2 | IDs:{350,398,}
+Nome: Dave -> Incidencia: 3 | IDs:{225,293,301,}
+Nome: Al -> Incidencia: 3 | IDs:{371,538,558,}
+Nome: Alexander -> Incidencia: 3 | IDs:{25,833,847,}
+Nome: Leslie -> Incidencia: 3 | IDs:{665,683,790,}
+Nome: Jean-Pierre -> Incidencia: 3 | IDs:{197,219,306,}
+Nome: Kurt -> Incidencia: 3 | IDs:{379,442,714,}
+Nome: Frank -> Incidencia: 3 | IDs:{380,451,676,}
+Nome: Graham -> Incidencia: 3 | IDs:{289,336,745,}
+Nome: Franco -> Incidencia: 3 | IDs:{171,740,762,}
+Nome: Jan -> Incidencia: 3 | IDs:{76,136,759,}
+Nome: Ernie -> Incidencia: 3 | IDs:{413,450,679,}
+Nome: Eric -> Incidencia: 3 | IDs:{128,688,743,}
+Nome: Fred -> Incidencia: 3 | IDs:{545,615,693,}
+Nome: Mark -> Incidencia: 3 | IDs:{17,87,288,}
+Nome: Juan -> Incidencia: 3 | IDs:{31,579,782,}
+Nome: Danny -> Incidencia: 3 | IDs:{193,240,805,}
+Nome: Esteban -> Incidencia: 3 | IDs:{74,820,838,}
+Nome: Joe -> Incidencia: 3 | IDs:{728,776,788,}
+Nome: Geoff -> Incidencia: 3 | IDs:{209,490,785,}
+Nome: Derek -> Incidencia: 3 | IDs:{118,206,321,}
+Nome: Sam -> Incidencia: 3 | IDs:{344,368,611,}
+Nome: Lance -> Incidencia: 3 | IDs:{508,651,839,}
+Nome: Oscar -> Incidencia: 3 | IDs:{165,695,856,}
+Nome: Carlo -> Incidencia: 3 | IDs:{248,325,446,}
+Nome: Philippe -> Incidencia: 4 | IDs:{112,113,166,741,}
+Nome: Carlos -> Incidencia: 4 | IDs:{199,250,496,831,}
+Nome: Don -> Incidencia: 4 | IDs:{511,528,614,682,}
+Nome: Guy -> Incidencia: 4 | IDs:{265,291,389,764,}
+Nome: Tom -> Incidencia: 4 | IDs:{252,311,393,605,}
+Nome: Max -> Incidencia: 4 | IDs:{349,720,819,829,}
+Nome: Alberto -> Incidencia: 4 | IDs:{244,623,647,761,}
+Nome: Charles -> Incidencia: 4 | IDs:{735,801,818,843,}
+Nome: Alessandro -> Incidencia: 4 | IDs:{70,145,284,573,}
+Nome: Walt -> Incidencia: 4 | IDs:{433,654,771,796,}
+Nome: Christian -> Incidencia: 4 | IDs:{32,104,157,600,}
+Nome: Giorgio -> Incidencia: 4 | IDs:{45,220,426,483,}
+Nome: Andrea -> Incidencia: 4 | IDs:{85,110,130,333,}
+Nome: Jean -> Incidencia: 4 | IDs:{55,552,554,668,}
+Nome: Bruce -> Incidencia: 4 | IDs:{360,471,506,584,}
+Nome: Chuck -> Incidencia: 4 | IDs:{507,521,557,563,}
+Nome: Roger -> Incidencia: 4 | IDs:{335,468,671,736,}
+Nome: Bobby -> Incidencia: 4 | IDs:{249,381,522,734,}
+Nome: Olivier -> Incidencia: 4 | IDs:{44,106,129,482,}
+Nome: Jacques -> Incidencia: 5 | IDs:{35,172,198,650,680,}
+Nome: Michael -> Incidencia: 5 | IDs:{30,121,143,247,480,}
+Nome: Piero -> Incidencia: 5 | IDs:{544,634,641,722,760,}
+Nome: Luigi -> Incidencia: 5 | IDs:{577,586,588,633,786,}
+Nome: Hans -> Incidencia: 5 | IDs:{246,268,478,717,753,}
+Nome: Jo -> Incidencia: 5 | IDs:{189,303,346,347,377,}
+Nome: Chris -> Incidencia: 5 | IDs:{278,354,388,400,505,}
+Nome: Alan -> Incidencia: 5 | IDs:{178,390,421,502,689,}
+Nome: Ricardo -> Incidencia: 5 | IDs:{41,73,217,218,454,}
+Nome: Alex -> Incidencia: 5 | IDs:{62,133,237,339,417,}
+Nome: Ken -> Incidencia: 5 | IDs:{495,582,663,744,781,}
+Nome: Ian -> Incidencia: 5 | IDs:{251,270,420,437,707,}
+Nome: Jackie -> Incidencia: 5 | IDs:{262,328,334,453,797,}
+Nome: François -> Incidencia: 5 | IDs:{183,296,327,348,604,}
+Nome: Robert -> Incidencia: 5 | IDs:{9,38,602,626,737,}
+Nome: Jack -> Incidencia: 5 | IDs:{356,486,562,658,850,}
+Nome: Patrick -> Incidencia: 5 | IDs:{40,175,221,236,258,}
+Nome: Pedro -> Incidencia: 5 | IDs:{37,64,83,142,345,}
+Nome: Eddie -> Incidencia: 6 | IDs:{56,158,292,513,527,532,}
+Nome: Jimmy -> Incidencia: 6 | IDs:{525,556,592,653,706,799,}
+Nome: André -> Incidencia: 6 | IDs:{429,553,603,609,639,826,}
+Nome: Brian -> Incidencia: 7 | IDs:{205,266,312,391,422,484,778,}
+Nome: Jim -> Incidencia: 7 | IDs:{302,373,440,509,524,535,727,}
+Nome: Roberto -> Incidencia: 7 | IDs:{90,195,424,444,499,643,832,}
+Nome: George -> Incidencia: 8 | IDs:{332,352,574,591,725,726,730,846,}
+Nome: Paul -> Incidencia: 9 | IDs:{108,406,510,555,585,621,632,756,813,}
+Nome: Johnny -> Incidencia: 9 | IDs:{65,174,188,359,512,533,660,732,804,}
+Nome: Bob -> Incidencia: 10 | IDs:{276,383,396,514,516,548,575,619,628,702,}
+Nome: David -> Incidencia: 10 | IDs:{14,101,259,322,338,407,416,542,747,784,}
+Nome: Bill -> Incidencia: 11 | IDs:{343,519,560,570,657,684,701,729,749,769,803,}
+Nome: Tony -> Incidencia: 11 | IDs:{245,294,408,438,459,464,479,529,666,705,738,}
+Nome: Peter -> Incidencia: 13 | IDs:{309,320,362,367,397,448,488,493,569,581,661,687,721,}
+Nome: Mike -> Incidencia: 14 | IDs:{191,283,305,329,374,387,392,472,540,565,578,617,662,673,}
+Nome: John -> Incidencia: 14 | IDs:{187,300,340,341,355,357,372,399,419,436,667,685,696,779,}

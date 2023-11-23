@@ -196,4 +196,15 @@ public class driverNode {
         System.out.println("Data de Nascimento: " + this.date.toString());
         System.out.println("");//Quebra de linha
     }
+
+    /**
+     * Método para imprimir somente uma prévia de um determinado piloto
+     * <p> Utilizado para a Lista Invertida
+     */
+    public void printPreview(){
+
+        System.out.println("\nPiloto: " + this.name + " " + this.surname);
+        System.out.println("ID: " + this.ID +"\n");
+
+    }
 }

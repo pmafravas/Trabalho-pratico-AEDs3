@@ -41,6 +41,7 @@ public class TP {
                 "[09] - LISTA - Criar Lista Invertida\n" +
                 "[10] - LISTA - Exibir Lista Invertida\n" +
                 "[11] - LISTA - Criar arquivo da Lista Invertida\n" +
+                "[12] - LISTA - Realizar busca na Lista Invertida\n" +
                 "[00] - Sair\n" 
             );
             System.out.print("Digite uma opção: ");
@@ -181,6 +182,7 @@ public class TP {
 
                 case 9:
                     LInvertida.criarListaNome();
+                    System.out.println("Lista criada com sucesso!\n");
                     break;
                 
                 case 10:
@@ -189,6 +191,15 @@ public class TP {
 
                 case 11:
                     LInvertida.criarArquivoLista();
+                    break;
+
+                case 12:
+                    System.out.println("Digite o nome do piloto que deseja buscar:");
+                    if(scan.hasNext()){
+                        scan.nextLine(); //Lendo caso exista algo no buffer
+                    }
+                    String nome = scan.nextLine();
+                    LInvertida.pesquisaIndice(nome, Index, crud);
                     break;
 
                 case 0:
