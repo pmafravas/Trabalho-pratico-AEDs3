@@ -155,10 +155,7 @@ public class chaveIndice {
             IDleitura = index.readInt();
             endereco = index.readLong();
 
-            if(IDleitura == ID){ //Verificando se o ID lido foi o correto
-                System.out.println("Busca do ID feita com sucesso!");
-            }
-            else{ //Caso não seja, o endereço será redefinido automaticamente para 0
+            if(IDleitura != ID){ //Caso não seja, o endereço será redefinido automaticamente para 0
                 System.out.println("Não foi possível encontrar o ID selecionado, ele pode ter sido removido...");
                 endereco = 0;
             }
