@@ -1,4 +1,5 @@
 import java.io.EOFException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.HashMap;
@@ -69,28 +70,45 @@ public class listaInvertida {
         System.out.println("Lista criada com sucesso!\n");
     }
 
-    void pesquisarListaNome(){
-        
+    void criarArquivoLista(){
+        //Verificando se o Map de Lista foi criado
+        if (contagemNomes.size() == 0){
+            System.out.println("Crie uma lista invertida antes de criar um arquivo!");
+        }
+        else{
+            try {
+                FileWriter Writer = new FileWriter("src/data/ListaInvertida.txt");
+                Map<String, Integer> mapaOrdenado = ordenaMap(contagemNomes);
+                for(Map.Entry<String, Integer> entry : mapaOrdenado.entrySet()){
+                    String nome = entry.getKey();
+                    int qnt = entry.getValue();
+                    Writer.write(nome);
+                    Writer.write(": x");
+                    Writer.write(qnt + "\n");
+                }
+                System.out.println("Arquivo criado com sucesso.");
+                Writer.close();
+            } 
+            catch (Exception e) {
+                System.out.println("Houve um erro ao tentar criar o arquivo:");
+                e.printStackTrace();
+            }
+            
+        }
     }
 
     /**
      * Método para imprimir os valores da Lista Invertida de forma ordenada
      * pela incidencia dos nomes
      */
-    void imprimirListaInvertida(){
+    void imprimirListaInvertida() {
         //Verificando se o Map foi carregado com
         if (contagemNomes.size() == 0) {
             System.out.println("Crie uma lista invertida antes de imprimir!");
             
         }
         else{
-            Map<String, Integer> mapaOrdenado = contagemNomes.entrySet().stream() // Criando uma Stream das entradas do mapa
-                .sorted(Map.Entry.comparingByValue()) // Ordena as entradas do Stream comparando ao Map.Entry
-                .collect(Collectors.toMap( // Coleta os resultados da ordenação em um OUTRO Map
-                    Map.Entry::getKey, // Obtendo a String
-                    Map.Entry::getValue, // Obtendo o int
-                    (oldValue, newValue) -> oldValue, // Resolução de qualquer conflito caso apareçam chaves iguais
-                    LinkedHashMap::new)); // Criação do novo Map para o recebimento da Stream ordenada
+            Map<String, Integer> mapaOrdenado = ordenaMap(contagemNomes);
 
             //Impressão das String ordenadas
             System.out.println("Incidencia dos nomes:");
@@ -98,6 +116,18 @@ public class listaInvertida {
                 System.out.println(entry.getKey() + ": " + entry.getValue());
             }
         }
+    }
+
+    Map<String, Integer> ordenaMap(Map<String, Integer> desordenado) {
+        Map<String, Integer> mapaOrdenado = desordenado.entrySet().stream() // Criando uma Stream das entradas do mapa
+            .sorted(Map.Entry.comparingByValue()) // Ordena as entradas do Stream comparando ao Map.Entry
+            .collect(Collectors.toMap( // Coleta os resultados da ordenação em um OUTRO Map
+                Map.Entry::getKey, // Obtendo a String
+                Map.Entry::getValue, // Obtendo o int
+                (oldValue, newValue) -> oldValue, // Resolução de qualquer conflito caso apareçam chaves iguais
+                LinkedHashMap::new)); // Criação do novo Map para o recebimento da Stream ordenada
+
+        return mapaOrdenado;
     }
 
 }

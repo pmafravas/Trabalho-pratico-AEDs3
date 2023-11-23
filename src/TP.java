@@ -38,9 +38,9 @@ public class TP {
                 "[06] - DB - Export DB as CSV\n" +
                 "[07] - INDEX - Criar Index\n" + 
                 "[08] - INDEX - Exibir Index\n" +
-                "[09] - INDEX - Pesquisar no Index\n" +
-                "[10] - LISTA - Criar Lista Invertida\n" +
-                "[11] - LISTA - Exibir Lista Invertida\n" +
+                "[09] - LISTA - Criar Lista Invertida\n" +
+                "[10] - LISTA - Exibir Lista Invertida\n" +
+                "[11] - LISTA - Criar arquivo da Lista Invertida\n" +
                 "[00] - Sair\n" 
             );
             System.out.print("Digite uma opção: ");
@@ -127,8 +127,9 @@ public class TP {
 
                         crud.pilotos.setID(id2);
                         crud.pilotos.registrar(reference, name, surname, nationality, driverNum, dateAux, code); //Repassando atributos e criando
-                        
-                        if(crud.update(id2)) { //Checando se é possível atualizar
+                        long busca2 = Index.buscarIndex(id2);
+
+                        if(crud.updateWithIndex(id2, busca2)) { //Checando se é possível atualizar
                             System.out.println("\nRegistro atualizado.");
 
                             Index.createIndex();
@@ -147,8 +148,9 @@ public class TP {
                 case 4: //Delete
                     System.out.println("\nDigite um ID para invalidar o seu respectivo registro: ");
                     int id3 = scan.nextInt();
+                    long busca3 = Index.buscarIndex(id3);
 
-                    if(crud.delete(id3)) { //Deleta o registro indicado pelo ID informado
+                    if(crud.deleteWithIndex(id3, busca3)) { //Deleta o registro indicado pelo ID informado
                         System.out.println("\nRegistro deletado com sucesso.");
 
                         Index.createIndex();
@@ -178,15 +180,15 @@ public class TP {
                     break;
 
                 case 9:
-                    
+                    LInvertida.criarListaNome();
                     break;
                 
                 case 10:
-                    LInvertida.criarListaNome();
+                    LInvertida.imprimirListaInvertida();
                     break;
 
                 case 11:
-                    LInvertida.imprimirListaInvertida();
+                    LInvertida.criarArquivoLista();
                     break;
 
                 case 0:
