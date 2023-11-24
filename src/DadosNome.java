@@ -18,10 +18,19 @@ public class DadosNome {
         this.localID.add(ID);
     }
 
+
+    /**
+     * Método para aumentar a incidencia de aparição de um determinado nome
+     */
     void aumentarIncidencia(){
         this.incidencia++;
     }
 
+    /**
+     * Método para adicionar um ID de um nome
+     * <p>O ID é verificado se já foi adicionado para não realizar dupla inserção.
+     * @param ID
+     */
     void addLocalID(int ID){
         if(!this.localID.contains(ID)){ //Checando se o ID já foi adicionado previamente
             this.localID.add(ID); //Adicionando ID ao Array
