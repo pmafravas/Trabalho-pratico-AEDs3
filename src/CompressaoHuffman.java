@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class CompressãoHuffman {
+public class CompressaoHuffman {
     HashMap<Character, Integer> frequencia = new HashMap<>(); //Será utilizado para medir a frequencia de todas as letras e numeros
     driverNode pilotos = new driverNode();
     String dbPath = "src/data/driversDB.db";
