@@ -7,6 +7,7 @@ import java.util.PriorityQueue;
 
 public class CompressaoHuffman {
     HashMap<Character, Integer> frequencia = new HashMap<>(); //Será utilizado para medir a frequencia de todas as letras e numeros
+    HashMap<Character, String> codificacoes = new HashMap<>(); //Será utilizado para armazenar as codificações dos simbolos
     driverNode pilotos = new driverNode();
     String dbPath = "src/data/driversDB.db";
     RandomAccessFile arquivo;
@@ -14,7 +15,11 @@ public class CompressaoHuffman {
 
     void comprimir(){
         contagemDeSimbolos(); //Primeiro será contabilizado todos os simbolos do arquivo e construido uma arvore binaria de huffman
+        codificacaoDeHuffman(raiz, "", codificacoes);
 
+        for (Map.Entry<Character, String> entry : codificacoes.entrySet()) {
+            System.out.println("Símbolo: " + entry.getKey() + ", Código Huffman: " + entry.getValue());
+        }
     }
     
     void contagemDeSimbolos() {
@@ -167,7 +172,16 @@ public class CompressaoHuffman {
          
     }
 
-    void codificacaoDeHuffman(){
+    void codificacaoDeHuffman(NoDeHuffman no, String codigo, HashMap<Character, String> codigoHuffman){
+        if(no != null){
+            if(no.esquerda == null && no.direita == null){
+                codigoHuffman.put(no.simbolo, codigo);
+            }
 
+            codificacaoDeHuffman(no.esquerda, codigo + "0", codigoHuffman);
+            
+            
+            codificacaoDeHuffman(no.direita, codigo + "1", codigoHuffman);
+        }
     }
 }

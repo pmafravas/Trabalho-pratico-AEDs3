@@ -1,4 +1,4 @@
-public class NoDeHuffman {
+public class NoDeHuffman implements Comparable<NoDeHuffman>{
     Character simbolo;
     Integer frequencia;
     NoDeHuffman esquerda, direita;
@@ -16,5 +16,13 @@ public class NoDeHuffman {
 
     public int comparar(NoDeHuffman outro) {
         return this.frequencia - outro.frequencia;
+    }
+
+    /*
+     * Método para realizar comparação entre Nós
+     */
+    @Override
+    public int compareTo(NoDeHuffman outro) {
+        return Integer.compare(this.frequencia, outro.frequencia);
     }
 }

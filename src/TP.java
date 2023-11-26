@@ -26,6 +26,7 @@ public class TP {
         CRUD crud = new CRUD();
         chaveIndice Index = new chaveIndice();
         listaInvertida LInvertida = new listaInvertida();
+        CompressaoHuffman huffman = new CompressaoHuffman();
         int opcao;
 
         do {
@@ -200,6 +201,10 @@ public class TP {
                     }
                     String nome = scan.nextLine();
                     LInvertida.pesquisaIndice(nome, Index, crud);
+                    break;
+
+                case 13:
+                    huffman.comprimir();
                     break;
 
                 case 0:
