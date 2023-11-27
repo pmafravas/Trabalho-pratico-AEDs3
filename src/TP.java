@@ -43,6 +43,7 @@ public class TP {
                 "[10] - LISTA - Exibir Lista Invertida\n" +
                 "[11] - LISTA - Criar arquivo da Lista Invertida\n" +
                 "[12] - LISTA - Realizar busca na Lista Invertida\n" +
+                "[13] - Huffman - Comprimir arquivo\n" +
                 "[00] - Sair\n" 
             );
             System.out.print("Digite uma opção: ");

@@ -85,7 +85,47 @@ public class CompressaoHuffman {
             e.printStackTrace();
         }
     }
-    
+
+    /**
+     * Método que fará a leitura do arquivo comprimido
+     */
+    void descomprimir(){
+        if(raiz == null){ //Checando se contem os dados para descompressão
+            if(frequencia.isEmpty()){ //Verificando se o Hash está vazio
+                frequencia = readHash();
+            }
+            raiz = construirArvoreHuffman(frequencia); //Carregando caso vazio
+        }
+        iterar(raiz);
+    }
+
+    void iterar(NoDeHuffman raiz){
+        StringBuilder str = new StringBuilder();
+        String read;
+        String binaryPath = "src/data/driversDBCompressao.bin"; //Path do novo arquivo comprimido
+        try{
+            BufferedReader bf = new BufferedReader(new FileReader(binaryPath));
+            read = bf.readLine(); //Lendo todo o arquivo
+
+            for(char c : read.toCharArray()){
+                if(c == '0'){
+                    raiz = raiz.esquerda;
+                } else if (c == '1') {
+                    raiz = raiz.direita;
+                }
+                else{
+                    //TODO: TERMINAR ITERAÇÃO E LER TUDO
+                }
+            }
+
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     void contagemDeSimbolos() {
         try{
             arquivo = new RandomAccessFile(dbPath, "rw"); //Abrindo arquivo para realizar contabilização
