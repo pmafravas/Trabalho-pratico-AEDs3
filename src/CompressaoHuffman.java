@@ -1,6 +1,5 @@
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -8,17 +7,82 @@ import java.util.PriorityQueue;
 public class CompressaoHuffman {
     HashMap<Character, Integer> frequencia = new HashMap<>(); //Será utilizado para medir a frequencia de todas as letras e numeros
     HashMap<Character, String> codificacoes = new HashMap<>(); //Será utilizado para armazenar as codificações dos simbolos
+    StringBuilder codificado = new StringBuilder(); //Utilizado para escrever os códigos de huffman no novo arquivo
+
     driverNode pilotos = new driverNode();
     String dbPath = "src/data/driversDB.db";
     RandomAccessFile arquivo;
     NoDeHuffman raiz;
 
+    /**
+     * Método que fará a compressão do arquivo realizando a chamada de várias outras funções
+     */
     void comprimir(){
         contagemDeSimbolos(); //Primeiro será contabilizado todos os simbolos do arquivo e construido uma arvore binaria de huffman
-        codificacaoDeHuffman(raiz, "", codificacoes);
+        codificacaoDeHuffman(raiz, "", codificacoes); //Gerando códigos para as palavras
 
-        for (Map.Entry<Character, String> entry : codificacoes.entrySet()) {
-            System.out.println("Símbolo: " + entry.getKey() + ", Código Huffman: " + entry.getValue());
+        try{
+            ArrayList<Byte> ba = new ArrayList<>();
+            arquivo = new RandomAccessFile(dbPath, "rw"); //Abrindo arquivo para criar o Byte Array comprimido
+            arquivo.seek(0); //Apontado para o inicio do arquivo
+            Integer IDloop = 1;
+
+            Integer metadados = arquivo.readInt(); //Lendo todo o metadado
+
+            String simbolo = metadados.toString(); //Convertendo o int para String
+            codificarTexto(simbolo, codificacoes); //Enviando a String para ser codificada
+
+            while (IDloop <= metadados){
+                try{
+                    if(arquivo.readChar() != '*'){ //Verificando se será um registro morto. Caso seja, não iremos comprimir pois será espaço inutilizado
+                        Integer tamanhoRegistro = arquivo.readInt(); //Guardando tamanho do registro
+                        codificarTexto(tamanhoRegistro.toString(), codificacoes);
+                        byte[] bytes = new byte[tamanhoRegistro]; //Criando byte array do tamanho do registro
+                        arquivo.readFully(bytes); //Lendo todo o registro de acordo com a quantidade de bytes
+                        pilotos.fromByteArray(bytes); //Extrai o objeto do vetor de btyes
+
+                        //Codificando toda a classe piloto
+                        Integer ID = pilotos.getID(); //Recebendo ID para enviar a conversão de String
+                        codificarTexto(ID.toString(), codificacoes);
+                        codificarTexto(pilotos.getReference(), codificacoes);
+                        codificarTexto(pilotos.getName(), codificacoes);
+                        codificarTexto(pilotos.getSurname(), codificacoes);
+                        codificarTexto(pilotos.getNatiotanlity(), codificacoes);
+                        codificarTexto(pilotos.getDriverNumber(), codificacoes);
+                        codificarTexto(pilotos.getDate().toString(), codificacoes);
+                        codificarTexto(pilotos.getCode(), codificacoes);
+
+                    }
+                    else{
+                        arquivo.skipBytes(arquivo.readInt()); //Pulando registro morto
+                    }
+                    IDloop++;
+                }
+                catch (EOFException e) {
+                    break;
+                }
+            }
+
+            String binaryPath = "src/data/driversDBCompressao.bin"; //Path do novo arquivo comprimido
+            try(BufferedWriter writer = new BufferedWriter(new FileWriter(binaryPath))){
+                writer.write(codificado.toString()); //Escrevendo resultado da codificação
+                System.out.println("Arquivo comprimido criado!");
+                long tamOg = arquivo.length();
+                long newSz = binaryPath.length();
+                if(tamOg > newSz){
+                    System.out.println("Novo arquivo é " + (newSz/tamOg)*100 +"% menor.");
+                }
+                else{
+                    System.out.println("Novo arquivo é " + (tamOg/newSz)*100 +"% maior.");
+                }
+                System.out.println("Salvando Arvore de Huffman...");
+                saveHash(frequencia);
+            }
+
+        }
+        catch (IOException e){
+            System.out.println("Houve um erro ao tentar codificar o arquivo:");
+            e.printStackTrace();
         }
     }
     
@@ -172,6 +236,13 @@ public class CompressaoHuffman {
          
     }
 
+    /**
+     * Método que gerará todos os códigos de Huffman para os símbolos
+     *
+     * @param no - para construir a árvore
+     * @param codigo - geração do código do simbolo
+     * @param codigoHuffman - Para guardar suas entradas
+     */
     void codificacaoDeHuffman(NoDeHuffman no, String codigo, HashMap<Character, String> codigoHuffman){
         if(no != null){
             if(no.esquerda == null && no.direita == null){
@@ -183,5 +254,73 @@ public class CompressaoHuffman {
             
             codificacaoDeHuffman(no.direita, codigo + "1", codigoHuffman);
         }
+    }
+
+    /**
+     * Método para realizar a leitura de uma palavra e a codificar
+     *
+     * <p>Método vai comparar todas as letras de uma palavra e receber seu código de Huffman, código este
+     * que serpa inserido em uma String Builder que psoteriormente será escrita
+     *
+     * @param entrada - palavra a ser codificada
+     * @param codigoHuffman - Hash com todos os códigos de Huffman
+     */
+    void codificarTexto(String entrada, HashMap<Character, String> codigoHuffman ){
+
+        for (char simbolo : entrada.toCharArray()){ //Iterando sobre todas as letras do texto lido
+            if(codigoHuffman.containsKey(simbolo)){
+                codificado.append(codigoHuffman.get(simbolo)); //Recebendo valor binário da chave
+            }
+            else{
+                System.out.println("ERRO AO CODIFICAR " + simbolo);
+            }
+        }
+    }
+
+    /**
+     * Método para salvar o HashMap utilizado para criar a árvore de Huffman
+     * @param mapaPrograma contendo o Hash utilizado para criar a arvore
+     */
+    void saveHash(HashMap<Character, Integer> mapaPrograma){
+        if(!mapaPrograma.isEmpty()){
+            String path = "src/data/hashmap.dat";
+            try{
+                ObjectOutputStream objWriter = new ObjectOutputStream(new FileOutputStream(path));
+                objWriter.writeObject(mapaPrograma);
+                System.out.println("HashMap de codificação salvo!");
+            }
+            catch (IOException e){
+                System.out.println("Houve um erro ao tentar salvar o hash!");
+                e.printStackTrace();
+            }
+        }
+        else{
+            System.out.println("Não existe nenhum simbolo codificado! Codifique novos simbolos ou carregue um Hash prévio");
+        }
+    }
+
+    /**
+     * Método para realizar leitura de um arquivo de objeto
+     *
+     * <p>Método faz a leitura de um arquivom que contem um HashMap<Character, Integer> dentro possuindo
+     * as informações da árvore binária de Huffman
+     * @return hMap
+     */
+    HashMap<Character, Integer> readHash(){
+        HashMap<Character, Integer> hMap = new HashMap<>();
+        String path = "src/data/hashmap.dat";
+        try{
+            ObjectInputStream objReader = new ObjectInputStream(new FileInputStream(path));
+            Object objLido = objReader.readObject();
+            if (objLido instanceof HashMap){
+                hMap = (HashMap<Character, Integer>) objLido;
+                System.out.println("HashMap lido com sucesso!");
+            }
+        }
+        catch (IOException | ClassNotFoundException e){
+            System.out.println("Houve um erro ao tentar ler o hash! Certifique-se que o arquivo 'hashmap.dat' existe!");
+            e.printStackTrace();
+        }
+        return hMap;
     }
 }
