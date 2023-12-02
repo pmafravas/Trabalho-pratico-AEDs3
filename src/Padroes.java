@@ -1,10 +1,14 @@
 import java.io.BufferedReader;
-import java.io.EOFException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.RandomAccessFile;
 
 public class Padroes {
+    
+    /**
+     * Método para realizar Casamento de Padrões 
+     * <p>Método Força Bruta
+     * @param padrao - contendo o padrão a ser buscado
+     */
     void forcaBruta(String padrao){
         /*
          * Realizando a leitura do arquivo CSV para poder fazer o casamento de padrão
@@ -18,6 +22,7 @@ public class Padroes {
                 String linha;
                 Integer comparacoes = 0, IDloop = 1;
                 Integer pl = padrao.length(); //Tamanho do padrão
+                long inicio = System.currentTimeMillis();
 
                 while ((linha = leitor.readLine()) != null) { //Lendo todo o arquivo CSV para realizar toda a analise possível
                     Integer tl = linha.length(); 
@@ -40,7 +45,10 @@ public class Padroes {
                     }
                     IDloop++;
                 }
-
+                long fim = System.currentTimeMillis();
+                System.out.println("Foram realizadas " + comparacoes + " comparações.");
+                System.out.println("A comparação por todo o arquivo levou " + (fim-inicio) + " milissegundos.");
+                leitor.close();
             }
             catch (IOException e){
                 System.out.println("Houve um erro ao tentar abrir o arquivo newDrivers:");
@@ -48,6 +56,11 @@ public class Padroes {
             }
     }
 
+    /**
+     * Método para realizar Casamento de Padrões 
+     * <p>Método KMP
+     * @param padrao - contendo o padrão a ser buscado
+     */
     void KMP(String padrao){
         /*
          * Realizando a leitura do arquivo CSV para poder fazer o casamento de padrão
@@ -60,6 +73,7 @@ public class Padroes {
                 BufferedReader leitor = new BufferedReader(csv); 
                 String linha;
                 int comparacoes = 0, IDloop = 0;
+                long inicio = System.currentTimeMillis();
 
                 int[] vetorF = calcularVetorDeFalhas(padrao); //Vetor dde falhas
                 int pl = padrao.length(); //Tamanho do padrão
@@ -92,7 +106,12 @@ public class Padroes {
                     }
                     linha = leitor.readLine();
                     IDloop++;
+                    
                 }while (linha != null);
+                long fim = System.currentTimeMillis();
+                System.out.println("Foram realizadas " + comparacoes + " comparações.");
+                System.out.println("A comparação por todo o arquivo levou " + (fim-inicio) + " milissegundos.");
+                leitor.close();
             }
             catch (IOException e){
                 System.out.println("Houve um erro ao tentar abrir o arquivo newDrivers:");
@@ -100,6 +119,12 @@ public class Padroes {
             }
     }
 
+    /**
+     * Método para calcular o Vetor de Falhas utilizado por KMP
+     * <p>Calcula para quais as letras o KMP pode voltar caso haja uma falha nas comparações
+     * @param padrao - contendo o padrão
+     * @return vetorF com as possibilidades de retorno
+     */
     private int[] calcularVetorDeFalhas(String padrao){
         int pl = padrao.length();
         int[] vetorF = new int[pl];
