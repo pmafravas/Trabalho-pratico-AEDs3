@@ -211,8 +211,25 @@ public class TP {
                     break;
 
                 case 14:
+                    System.out.println("Digite qual padrão você deseja buscar:");
+                    if(scan.hasNext()){
+                        scan.nextLine(); //Limpando buffer caso necessario
+                    }
+                    String buscaDePadrao = scan.nextLine();
+
                     System.out.println("Qual tipo de algoritmo deseja usar?");
                     System.out.println("[1] - Força bruta\n[2] - KMP");
+                    int op = scan.nextInt();
+
+                    if(op == 1){
+                        padrao.forcaBruta(buscaDePadrao);
+                    }
+                    else if (op == 2){
+                        padrao.KMP(buscaDePadrao);
+                    }
+                    else{System.out.println("Opção invalida...");}
+
+                    break;
 
                 case 0:
                     System.out.println("\nDesligando...");
