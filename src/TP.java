@@ -27,6 +27,7 @@ public class TP {
         chaveIndice Index = new chaveIndice();
         listaInvertida LInvertida = new listaInvertida();
         CompressaoHuffman huffman = new CompressaoHuffman();
+        Padroes padrao = new Padroes();
         int opcao;
 
         do {
@@ -44,6 +45,7 @@ public class TP {
                 "[11] - LISTA - Criar arquivo da Lista Invertida\n" +
                 "[12] - LISTA - Realizar busca na Lista Invertida\n" +
                 "[13] - Huffman - Comprimir arquivo\n" +
+                "[14] - Casamento de Padrões - Realizar busca\n" +
                 "[00] - Sair\n" 
             );
             System.out.print("Digite uma opção: ");
@@ -207,6 +209,10 @@ public class TP {
                 case 13:
                     huffman.comprimir();
                     break;
+
+                case 14:
+                    System.out.println("Qual tipo de algoritmo deseja usar?");
+                    System.out.println("[1] - Força bruta\n[2] - KMP");
 
                 case 0:
                     System.out.println("\nDesligando...");
