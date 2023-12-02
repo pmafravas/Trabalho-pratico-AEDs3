@@ -45,7 +45,79 @@ public class Padroes {
             }
     }
 
-    void KMP(String padrão){
+    void KMP(String padrao){
+        /*
+         * Realizando a leitura do arquivo CSV para poder fazer o casamento de padrão
+         * como designado pelas aulas
+         */
+
+         //Abertura de arquivos para leitura
+            try{
+                FileReader csv = new FileReader("src/data/newDrivers.csv"); //Abrindo arquivo CSV para recuperar dados
+                BufferedReader leitor = new BufferedReader(csv); 
+                String linha;
+                int comparacoes = 0, IDloop = 1;
+
+                int[] vetorF = calcularVetorDeFalhas(padrao); //Vetor dde falhas
+                int pl = padrao.length(); //Tamanho do padrão
+                
+                
+                while ((linha = leitor.readLine()) != null) {
+                    int j = 0; //Indice para o padrão
+                    int i = 0; //Indice para o texto (linha nesse caso)
+                    int tl = linha.length();
+                    while((tl - i) >= (pl - j)){
+                        if(padrao.charAt(j) == linha.charAt(i)){ //Comparando letras
+                            i++;
+                            j++;
+                        }
+                        
+                        comparacoes++;
+                        
+                        if(j==pl){ //Confenrindo se foram lidas a quantidade de letras suficiente do padrao para ter achado o resultado
+                            System.out.println("Padrão encontrado no ID: " + IDloop);
+                        }
+
+                        else if(i < pl && padrao.charAt(j) != linha.charAt(i)){ //Caso aconteca uma comparação negativa após realizar X comparações positivas
+                            if (j!=0)
+                                j = vetorF[j-1];
+                            else
+                                i = i+1;
+                        }
+
+                        IDloop++;
+                    }
+                }
+            }
+            catch (IOException e){
+                System.out.println("Houve um erro ao tentar abrir o arquivo newDrivers:");
+                e.printStackTrace();
+            }
+    }
+
+    private int[] calcularVetorDeFalhas(String padrao){
+        int pl = padrao.length();
+        int[] vetorF = new int[pl];
+        int lenght = 0; //comprimento do prefixo/sufixo
+        int loop = 1;
         
+        while (loop < pl) {
+            if (padrao.charAt(loop) == padrao.charAt(lenght)) { //Verificando se as letras são iguais
+                lenght++;
+                vetorF[loop] = lenght; //Armarzenando a posição do vetor de falhas
+                loop++;
+            }
+            else{
+                if(lenght!=0){
+                    lenght = vetorF[lenght-1]; //Caso tivermos um sufixo que também é prefixo diminuiremos o vetor
+                }
+                else{
+                    vetorF[loop] = 0; //Indicação que não foi encontrado nenhum prefixo que seja sufixo ao mesmo tempo
+                    loop++;
+                }
+            }
+        }
+
+        return vetorF;
     }
 }
