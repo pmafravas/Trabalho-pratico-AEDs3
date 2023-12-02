@@ -25,8 +25,8 @@ public class Padroes {
                     for(int l1 = 0; l1 <= tl-pl; l1++){ //Loop para percorrer o texto (linha no caso)
                         int l2; //Será utilizado para comparar depois
                         
-                        for(l2 = 0; l2 <= pl; l2++){ //Loop para percorrer o padrão
-                            comparacoes++; IDloop++;
+                        for(l2 = 0; l2 < pl; l2++){ //Loop para percorrer o padrão
+                            comparacoes++; 
                             if(linha.charAt(l1+l2) != padrao.charAt(l2)){
                                 break; //Caso as letras não batam, o loop secundário será interrompido
                             }
@@ -38,6 +38,7 @@ public class Padroes {
                             System.out.println("Padrão encontrado no ID " + IDloop);
                         }
                     }
+                    IDloop++;
                 }
 
             }
