@@ -28,6 +28,7 @@ public class TP {
         listaInvertida LInvertida = new listaInvertida();
         CompressaoHuffman huffman = new CompressaoHuffman();
         Padroes padrao = new Padroes();
+        Cifragem cript = new Cifragem();
         int opcao;
 
         do {
@@ -229,6 +230,10 @@ public class TP {
                     }
                     else{System.out.println("Opção invalida...");}
 
+                    break;
+
+                case 15:
+                    System.out.println("TESTE criptografia 'hamilton': " + cript.cripografar("hamilton"));
                     break;
 
                 case 0:
