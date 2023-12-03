@@ -22,6 +22,8 @@ public class driverNode {
     private ByteArrayInputStream BAS;
     private ByteArrayOutputStream BOS;
 
+    Cifragem cript = new Cifragem(); //Utilizado para criptografagem da referencia do
+
     /**
      * Construtor básico de um registro sem informações
      */
@@ -47,7 +49,7 @@ public class driverNode {
      * @param code
      */
     public void registrar(String reference, String name, String surname, String nationality, String driverNum, LocalDate date, String code){
-        this.reference = reference;
+        this.reference = cript.cripografar(reference); //Criptografando a referencia do piloto
         this.name = name;
         this.surname = surname;
         this.nationality = nationality;
@@ -62,7 +64,7 @@ public class driverNode {
      */
     public void registrar(driverNode objeto){
         this.ID = objeto.ID;
-        this.reference = objeto.reference;
+        this.reference = cript.cripografar(objeto.reference); //Criptografando a referencia do piloto
         this.name = objeto.name;
         this.surname = objeto.surname;
         this.nationality = objeto.nationality;
@@ -84,7 +86,7 @@ public class driverNode {
     }
 
     public String getReference(){
-        return reference;
+        return cript.descriptografar(reference); //Enviando referencia descriptografada
     }
 
     public void setReference(String reference){
