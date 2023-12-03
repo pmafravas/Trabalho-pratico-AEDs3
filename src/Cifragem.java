@@ -84,7 +84,7 @@ public class Cifragem {
   
             else { 
                 // Adição de símbolo para espaços entre letras
-                pmat[coluna][linha] = '-'; 
+                pmat[coluna][linha] = '~'; 
             } 
         } 
   
@@ -115,45 +115,51 @@ public class Cifragem {
      * @param msgCrip - com o texto criptografado
      * @return texto original
      */
-    public String descriptografar(String msgCrip) 
-    { 
-        int i, j, k; 
+    public String descriptografar(String msgCrip) {  
+
+        //Criando as variáveis necessárias para descriptografar
         char criptografado[] = msgCrip.toCharArray(); 
-  
-        ordenarChave(); 
+        int colunas = chave.length();
+        int linhas = (int) Math.ceil((msgCrip.length() / colunas));
+        char[][] msgNorm = new char[colunas][linhas]; //Matriz para receber a mensagem e descriptografar
+        ordenarChave(); //Ordenando chave
   
         //Lendo mensagem e colocando dentro do sistema de colunas para realizar leitura
-        int coluna = msgCrip.length(); 
-        chave.length(); 
-        char pmat[][] = new char[coluna][(chave.length())]; 
-        int tempcnt = -1; 
-  
-        for (i = 0; i < chave.length(); i++) { 
-            for (k = 0; k < chave.length(); k++) { 
-                if (i == posicoesOrdenas[k]) { 
-                    break; 
-                } 
-            } 
-  
-            for (j = 0; j < coluna; j++) { 
-                tempcnt++; 
-                pmat[j][k] = criptografado[tempcnt]; 
-            } 
-        } 
+        int x = 0;//Variavel para ler de criptografado[]
+        for (int i = 0; i < colunas; i++) {
+            for (int k = 0; k < linhas; k++) {
+                if(i+k >= criptografado.length){ //Saindo do loop caso a mensagem toda já tenha sido percorrida
+                    i = colunas;
+                    break;
+                }
+                
+                if(criptografado[x] == '~'){ //Checando por espaço separado dentro do arquivo
+                    msgNorm[k][i] = ' ';
+                }else{
+                    msgNorm[k][i] = criptografado[x];
+                }
+                x++;//Movendo de letra da mensagem criptografada
+            }
+        }
+        
   
         // Gerando a String final com a mensagem desciptografada
-        char msgOG[] = new char[coluna * chave.length()]; 
+        char msgOG[] = new char[colunas * chave.length()]; 
+        x = 0;
+
+        for (int i = 0; i < colunas; i++) {
+            for (int k = 0; k < linhas; k++) {
+                if(i+k >= msgOG.length){ //Saindo do loop caso a mensagem toda já tenha sido percorrida
+                    i = colunas;
+                    break;
+                }
+                msgOG[x] = msgNorm[i][posicoesOrdenas[k]];
+                x++;
+            }
+        }
   
-        k = 0; 
-        for (i = 0; i < coluna; i++) { 
-            for (j = 0; j < chave.length(); j++) { 
-                if (pmat[i][j] != '*') { 
-                    msgOG[k++] = pmat[i][j]; 
-                } 
-            } 
-        } 
-  
-        msgOG[k++] = '\0'; 
-        return (new String(msgOG)); 
+        String msgFinal = new String(msgOG);
+        msgFinal.trim(); //Removendo qualquer espaço
+        return (msgFinal); 
     } 
 }

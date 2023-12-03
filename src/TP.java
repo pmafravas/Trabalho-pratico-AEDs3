@@ -233,8 +233,11 @@ public class TP {
                     break;
 
                 case 15:
-                    System.out.println("TESTE criptografia 'hamilton': " + cript.cripografar("hamilton"));
+                    String criptografada = cript.cripografar("hamilton");
+                    System.out.println("TESTE criptografia 'hamilton': " + criptografada);
+                    System.out.println("DESCRIPTOGRAFADA: " + cript.descriptografar(criptografada));
                     break;
+                
 
                 case 0:
                     System.out.println("\nDesligando...");
