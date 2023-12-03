@@ -121,7 +121,7 @@ public class Cifragem {
         char criptografado[] = msgCrip.toCharArray(); 
         int colunas = chave.length();
         int linhas = (int) Math.ceil((msgCrip.length() / colunas));
-        char[][] msgNorm = new char[colunas][linhas]; //Matriz para receber a mensagem e descriptografar
+        char[][] msgNorm = new char[linhas][colunas]; //Matriz para receber a mensagem e descriptografar
         ordenarChave(); //Ordenando chave
   
         //Lendo mensagem e colocando dentro do sistema de colunas para realizar leitura
@@ -146,9 +146,8 @@ public class Cifragem {
         // Gerando a String final com a mensagem desciptografada
         char msgOG[] = new char[colunas * chave.length()]; 
         x = 0;
-
-        for (int i = 0; i < colunas; i++) {
-            for (int k = 0; k < linhas; k++) {
+        for (int i = 0; i < linhas; i++) {
+            for (int k = 0; k < colunas; k++) {
                 if(i+k >= msgOG.length){ //Saindo do loop caso a mensagem toda já tenha sido percorrida
                     i = colunas;
                     break;
@@ -159,7 +158,7 @@ public class Cifragem {
         }
   
         String msgFinal = new String(msgOG);
-        msgFinal.trim(); //Removendo qualquer espaço
+        msgFinal = msgFinal.trim(); //Removendo qualquer espaço
         return (msgFinal); 
     } 
 }
