@@ -49,7 +49,8 @@ public class driverNode {
      * @param code
      */
     public void registrar(String reference, String name, String surname, String nationality, String driverNum, LocalDate date, String code){
-        this.reference = cript.cripografar(reference); //Criptografando a referencia do piloto
+        //this.reference = cript.cripografar(reference); //Criptografando a referencia do piloto
+        this.reference = reference; //Original
         this.name = name;
         this.surname = surname;
         this.nationality = nationality;
@@ -64,7 +65,8 @@ public class driverNode {
      */
     public void registrar(driverNode objeto){
         this.ID = objeto.ID;
-        this.reference = cript.cripografar(objeto.reference); //Criptografando a referencia do piloto
+        //this.reference = cript.cripografar(objeto.reference); //Criptografando a referencia do piloto
+        this.reference = reference; //Original
         this.name = objeto.name;
         this.surname = objeto.surname;
         this.nationality = objeto.nationality;
@@ -86,7 +88,8 @@ public class driverNode {
     }
 
     public String getReference(){
-        return cript.descriptografar(reference); //Enviando referencia descriptografada
+        //return cript.descriptografar(reference); //Enviando referencia descriptografada
+        return reference; //Original
     }
 
     public void setReference(String reference){
@@ -189,7 +192,7 @@ public class driverNode {
     public void printRegistro(){
         
         System.out.println("\nID: " + this.ID);        
-        System.out.println("Referencia: " + this.reference);
+        System.out.println("Referencia: " + cript.descriptografar(this.reference));
         System.out.println("Codigo: " + this.code);
         System.out.println("Numero: " + this.driverNum);
         System.out.println("Nome: " + this.name);

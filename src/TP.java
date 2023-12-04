@@ -293,7 +293,6 @@ public class TP {
                         LocalDate datePiloto = crud.pilotos.getDate();
 
                         //Criando vetor de String com diversos valores do piloto
-                        System.out.println("ID PILOTO:" + idPiloto);
                         String[] linha = {Integer.toString(idPiloto), crud.pilotos.getReference(), crud.pilotos.getDriverNumber(), crud.pilotos.getCode(), crud.pilotos.getName(), crud.pilotos.getSurname(), datePiloto.toString(), crud.pilotos.getNatiotanlity()};
                         String linhaUnida = String.join(",", linha); //Unindo o vetor de String e separando com virgula
                         bufferedWriter.write(linhaUnida); //Escrevendo linha no CSV
